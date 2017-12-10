@@ -56,66 +56,66 @@ if __name__ == "__main__":
     # 如：L = [1, 2, 3]，需要3个指针和三个整数对象，对于数值运算比较浪费内存和CPU。
     # 因此，Numpy提供了ndarray(N-dimensional array object)对象：存储单一数据类型的多维数组。
 
-    # 1.使用array创建
-    #通过array函数传递list对象
-    L = [1, 2, 3, 4, 5, 6]
-    print("L = ", L)
-    a = np.array(L)
-    print("a = ", a)
-    print(type(a), type(L))
-    # 若传递的是多层嵌套的list，将创建多维数组
-    b = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
-    print(b)
-
-    # # # # 数组大小可以通过其shape属性获得
-    print(a.shape)
-    print(b.shape)
-
-    # # 也可以强制修改shape
-    b.shape = 4, 3
-    print(b)
-    # 注：从(3,4)改为(4,3)并不是对数组进行转置，而只是改变每个轴的大小，数组元素在内存中的位置并没有改变
-
-    # # 当某个轴为-1时，将根据数组元素的个数自动计算此轴的长度
-    b.shape = 2, -1
-    print(b)
-    print(b.shape)
-
-    b.shape = 3, 4
-    print(b)
-    # # # 使用reshape方法，可以创建改变了尺寸的新数组，原数组的shape保持不变
-    c = b.reshape((4, -1))
-    print("b = \n", b)
-    print('c = \n', c)
-
-    # # # 数组b和c共享内存，修改任意一个将影响另外一个
-    b[0][1] = 20
-    print("b = \n", b)
-    print("c = \n", c)
-
-    # # # 数组的元素类型可以通过dtype属性获得
-    print(a.dtype)
-    print(b.dtype)
-    # # # #
-    # # # # 可以通过dtype参数在创建时指定元素类型
-    d = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]], dtype=np.float)
-    f = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]], dtype=np.complex)
-    print(d)
-    print(f)
-
-    # # 如果更改元素类型，可以使用astype安全的转换
-    f = d.astype(np.int)
-    print(f)
-    # #
-    # # # 但不要强制仅修改元素类型，如下面这句，将会以int来解释单精度float类型
-    d.dtype = np.int
-    print(d)
+    # # 1.使用array创建
+    # #通过array函数传递list对象
+    # L = [1, 2, 3, 4, 5, 6]
+    # print("L = ", L)
+    # a = np.array(L)
+    # print("a = ", a)
+    # print(type(a), type(L))
+    # # 若传递的是多层嵌套的list，将创建多维数组
+    # b = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+    # print(b)
+    #
+    # # # # # 数组大小可以通过其shape属性获得
+    # print(a.shape)
+    # print(b.shape)
+    #
+    # # # 也可以强制修改shape
+    # b.shape = 4, 3
+    # print(b)
+    # # 注：从(3,4)改为(4,3)并不是对数组进行转置，而只是改变每个轴的大小，数组元素在内存中的位置并没有改变
+    #
+    # # # 当某个轴为-1时，将根据数组元素的个数自动计算此轴的长度
+    # b.shape = 2, -1
+    # print(b)
+    # print(b.shape)
+    #
+    # b.shape = 3, 4
+    # print(b)
+    # # # # 使用reshape方法，可以创建改变了尺寸的新数组，原数组的shape保持不变
+    # c = b.reshape((4, -1))
+    # print("b = \n", b)
+    # print('c = \n', c)
+    #
+    # # # # 数组b和c共享内存，修改任意一个将影响另外一个
+    # b[0][1] = 20
+    # print("b = \n", b)
+    # print("c = \n", c)
+    #
+    # # # # 数组的元素类型可以通过dtype属性获得
+    # print(a.dtype)
+    # print(b.dtype)
+    # # # # #
+    # # # # # 可以通过dtype参数在创建时指定元素类型
+    # d = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]], dtype=np.float)
+    # f = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]], dtype=np.complex)
+    # print(d)
+    # print(f)
+    #
+    # # # 如果更改元素类型，可以使用astype安全的转换
+    # f = d.astype(np.int)
+    # print(f)
+    # # #
+    # # # # 但不要强制仅修改元素类型，如下面这句，将会以int来解释单精度float类型
+    # d.dtype = np.int
+    # print(d)
 
     # 2.使用函数创建
     # 如果生成一定规则的数据，可以使用NumPy提供的专门函数
     # arange函数类似于python的range函数：指定起始值、终止值和步长来创建数组
     # 和Python的range类似，arange同样不包括终值；但arange可以生成浮点类型，而range只能是整数类型
-    np.set_printoptions(linewidth=100, suppress=True)
+    # np.set_printoptions(linewidth=100, suppress=True)
     # a = np.arange(1, 10, 0.5)
     # print(a)
     #
@@ -123,13 +123,13 @@ if __name__ == "__main__":
     # b = np.linspace(1, 10, 10)
     # print('b = ', b)
     #
-    # # 可以通过endpoint关键字指定是否包括终值
+    # # 可以通过endpoint关键字指定是否包括终值,不包含最后
     # c = np.linspace(1, 10, 10, endpoint=False)
     # print('c = ', c)
     #
     # # # 和linspace类似，logspace可以创建等比数列
-    # # 下面函数创建起始值为10^1，终止值为10^2，有10个数的等比数列
-    # d = np.logspace(1, 4, 4, endpoint=True, base=2)
+    # # 下面函数创建起始值为10^1，终止值为10^2，有10个数的等比数列,第二个数是几次幂
+    # d = np.logspace(0, 5, 6, endpoint=True, base=2)
     # print(d)
     # # # # #
     # # # # # 下面创建起始值为2^0，终止值为2^10(包括)，有10个数的等比数列
@@ -165,11 +165,11 @@ if __name__ == "__main__":
     # b[0] = 200
     # print(a)
 
-    # 3.2 整数/布尔数组存取
-    # 3.2.1
-    # 根据整数数组存取：当使用整数序列对数组元素进行存取时，
-    # 将使用整数序列中的每个元素作为下标，整数序列可以是列表(list)或者数组(ndarray)。
-    # 使用整数序列作为下标获得的数组不和原始数组共享数据空间。
+    # # 3.2 整数/布尔数组存取
+    # # 3.2.1
+    # # 根据整数数组存取：当使用整数序列对数组元素进行存取时，
+    # # 将使用整数序列中的每个元素作为下标，整数序列可以是列表(list)或者数组(ndarray)。
+    # # 使用整数序列作为下标获得的数组不和原始数组共享数据空间。
     # a = np.logspace(0, 9, 10, base=2)
     # print(a)
     # i = np.arange(0, 10, 2)
@@ -181,10 +181,10 @@ if __name__ == "__main__":
     # b[2] = 1.6
     # print(b)
     # print(a)
-
+    #
     # # 3.2.2
-    # 使用布尔数组i作为下标存取数组a中的元素：返回数组a中所有在数组b中对应下标为True的元素
-    # 生成10个满足[0,1)中均匀分布的随机数
+    # # 使用布尔数组i作为下标存取数组a中的元素：返回数组a中所有在数组b中对应下标为True的元素
+    # # 生成10个满足[0,1)中均匀分布的随机数
     # a = np.random.rand(10)
     # print(a)
     # # 大于0.5的元素索引
@@ -224,7 +224,7 @@ if __name__ == "__main__":
     # print(a[i])
     # print(a[i, 3])
 
-    # 4.1 numpy与Python数学库的时间比较
+    # # 4.1 numpy与Python数学库的时间比较
     # for j in np.logspace(0, 7, 8):
     #     x = np.linspace(0, 10, j)
     #     start = time.clock()
@@ -237,53 +237,53 @@ if __name__ == "__main__":
     #         x[i] = math.sin(t)
     #     t2 = time.clock() - start
     #     print(j, ": ", t1, t2, t2/t1)
-
-    # 4.2 元素去重
-    # 4.2.1直接使用库函数
+    #
+    # # 4.2 元素去重
+    # # 4.2.1直接使用库函数
     # a = np.array((1, 2, 3, 4, 5, 5, 7, 3, 2, 2, 8, 8))
     # print('原始数组：', a)
     # # # 使用库函数unique
     # b = np.unique(a)
     # print('去重后：', b)
     # # 4.2.2 二维数组的去重，结果会是预期的么？
-    c = np.array(((1, 2), (3, 4), (5, 6), (1, 3), (3, 4), (7, 6)))
-    print('二维数组：\n', c)
-    print('去重后：', np.unique(c))
-    # # # 4.2.3 方案1：转换为虚数
-    r, i = np.split(c, (1, ), axis=1)
-    x = r + i * 1j
+    # c = np.array(((1, 2), (3, 4), (5, 6), (1, 3), (3, 4), (7, 6)))
+    # print('二维数组：\n', c)
+    # print('去重后：', np.unique(c))
+    # # # # 4.2.3 方案1：转换为虚数
+    # r, i = np.split(c, (1, ), axis=1)
+    # # x = r + i * 1j
     # x = c[:, 0] + c[:, 1] * 1j
-    print('转换成虚数：', x)
-    print('虚数去重后：', np.unique(x))
-    print(np.unique(x, return_index=True))   # 思考return_index的意义
-    idx = np.unique(x, return_index=True)[1]
-    print('二维数组去重：\n', c[idx])
-    # # 4.2.3 方案2：利用set
-    print('去重方案2：\n', np.array(list(set([tuple(t) for t in c]))))
-
-    # 4.3 stack and axis
-    a = np.arange(1, 7).reshape((2, 3))
-    b = np.arange(11, 17).reshape((2, 3))
-    c = np.arange(21, 27).reshape((2, 3))
-    d = np.arange(31, 37).reshape((2, 3))
-    print('a = \n', a)
-    print('b = \n', b)
-    print('c = \n', c)
-    print('d = \n', d)
-    s = np.stack((a, b, c, d), axis=0)
-    print('axis = 0 ', s.shape, '\n', s)
-    s = np.stack((a, b, c, d), axis=1)
-    print('axis = 1 ', s.shape, '\n', s)
-    s = np.stack((a, b, c, d), axis=2)
-    print('axis = 2 ', s.shape, '\n', s)
-
+    # print('转换成虚数：', x)
+    # print('虚数去重后：', np.unique(x))
+    # print(np.unique(x, return_index=True))   # 思考return_index的意义
+    # idx = np.unique(x, return_index=True)[1]
+    # print('二维数组去重：\n', c[idx])
+    # # # 4.2.3 方案2：利用set
+    # print('去重方案2：\n', np.array(list(set([tuple(t) for t in c]))))
+    #
+    # # 4.3 stack and axis
+    # a = np.arange(1, 7).reshape((2, 3))
+    # b = np.arange(11, 17).reshape((2, 3))
+    # c = np.arange(21, 27).reshape((2, 3))
+    # d = np.arange(31, 37).reshape((2, 3))
+    # print('a = \n', a)
+    # print('b = \n', b)
+    # print('c = \n', c)
+    # print('d = \n', d)
+    # s = np.stack((a, b, c, d), axis=0)
+    # print('axis = 0 ', s.shape, '\n', s)
+    # s = np.stack((a, b, c, d), axis=1)
+    # print('axis = 1 ', s.shape, '\n', s)
+    # s = np.stack((a, b, c, d), axis=2)
+    # print('axis = 2 ', s.shape, '\n', s)
+    #
     # a = np.arange(1, 10).reshape(3,3)
     # print(a)
     # b = a + 10
     # print(b)
-    # print(np.dot(a, b)
+    # print(np.dot(a, b))
     # print(a * b)
-
+    #
     # a = np.arange(1, 10)
     # print(a)
     # b = np.arange(20,25)
@@ -292,60 +292,60 @@ if __name__ == "__main__":
 
     # 5.绘图
     # 5.1 绘制正态分布概率密度函数
-    mpl.rcParams['font.sans-serif'] = [u'SimHei']  #FangSong/黑体 FangSong/KaiTi
+    mpl.rcParams['font.sans-serif'] = [u'sans-serif']  #FangSong/黑体 FangSong/KaiTi
     mpl.rcParams['axes.unicode_minus'] = False
-    # mu = 0
-    # sigma = 1
-    # x = np.linspace(mu - 3 * sigma, mu + 3 * sigma, 51)
-    # y = np.exp(-(x - mu) ** 2 / (2 * sigma ** 2)) / (math.sqrt(2 * math.pi) * sigma)
-    # print(x.shape)
-    # print('x = \n', x)
-    # print(y.shape)
-    # print('y = \n', y)
-    # plt.figure(facecolor='w')
+    mu = 0
+    sigma = 1
+    x = np.linspace(mu - 3 * sigma, mu + 3 * sigma, 51)
+    y = np.exp(-(x - mu) ** 2 / (2 * sigma ** 2)) / (math.sqrt(2 * math.pi) * sigma)
+    print(x.shape)
+    print('x = \n', x)
+    print(y.shape)
+    print('y = \n', y)
+    plt.figure(facecolor='w')
     # plt.plot(x, y, 'ro-', linewidth=2)
-    # # plt.plot(x, y, 'r-', x, y, 'go', linewidth=2, markersize=8)
-    # plt.xlabel('X', fontsize=15)
-    # plt.ylabel('Y', fontsize=15)
-    # plt.title(u'高斯分布函数', fontsize=18)    #
-    # plt.grid(True)
-    # plt.show()
+    plt.plot(x, y, 'r-', x, y, 'go', linewidth=2, markersize=8)
+    plt.xlabel('X', fontsize=15)
+    plt.ylabel('Y', fontsize=15)
+    plt.title(u'高斯分布函数', fontsize=18)    #
+    plt.grid(True)
+    plt.show()
 
     # 5.2 损失函数：Logistic损失(-1,1)/SVM Hinge损失/ 0/1损失
-    # plt.figure(figsize=(10,8))
-    # x = np.linspace(start=-2, stop=3, num=1001, dtype=np.float)
-    # y_logit = np.log(1 + np.exp(-x)) / math.log(2)
-    # y_boost = np.exp(-x)
-    # y_01 = x < 0
-    # y_hinge = 1.0 - x
-    # y_hinge[y_hinge < 0] = 0
-    # plt.plot(x, y_logit, 'r-', label='Logistic Loss', linewidth=2)
-    # plt.plot(x, y_01, 'g-', label='0/1 Loss', linewidth=2)
-    # plt.plot(x, y_hinge, 'b-', label='Hinge Loss', linewidth=2)
-    # plt.plot(x, y_boost, 'm--', label='Adaboost Loss', linewidth=2)
-    # plt.grid()
-    # plt.legend(loc='upper right')
-    # plt.savefig('1.png')
-    # plt.show()
+    plt.figure(figsize=(10,8))
+    x = np.linspace(start=-2, stop=3, num=1001, dtype=np.float)
+    y_logit = np.log(1 + np.exp(-x)) / math.log(2)
+    y_boost = np.exp(-x)
+    y_01 = x < 0
+    y_hinge = 1.0 - x
+    y_hinge[y_hinge < 0] = 0
+    plt.plot(x, y_logit, 'r-', label='Logistic Loss', linewidth=2)
+    plt.plot(x, y_01, 'g-', label='0/1 Loss', linewidth=2)
+    plt.plot(x, y_hinge, 'b-', label='Hinge Loss', linewidth=2)
+    plt.plot(x, y_boost, 'm--', label='Adaboost Loss', linewidth=2)
+    plt.grid()
+    plt.legend(loc='upper right')
+    plt.savefig('1.png')
+    plt.show()
 
     # 5.3 x^x
-    # plt.figure(facecolor='w')
-    # x = np.linspace(-1.3, 1.3, 101)
-    # y = f(x)
-    # plt.plot(x, y, 'g-', label='x^x', linewidth=2)
-    # plt.grid()
-    # plt.legend(loc='upper left')
-    # plt.show()
+    plt.figure(facecolor='w')
+    x = np.linspace(-1.3, 1.3, 101)
+    y = f(x)
+    plt.plot(x, y, 'g-', label='x^x', linewidth=2)
+    plt.grid()
+    plt.legend(loc='upper left')
+    plt.show()
 
-    # 5.4 胸型线
-    # x = np.arange(1, 0, -0.001)
-    # y = (-3 * x * np.log(x) + np.exp(-(40 * (x - 1 / np.e)) ** 4) / 25) / 2
-    # plt.figure(figsize=(5,7), facecolor='w')
-    # plt.plot(y, x, 'r-', linewidth=2)
-    # plt.grid(True)
-    # plt.title(u'胸型线', fontsize=20)
-    # # plt.savefig('breast.png')
-    # plt.show()
+    5.4 胸型线
+    x = np.arange(1, 0, -0.001)
+    y = (-3 * x * np.log(x) + np.exp(-(40 * (x - 1 / np.e)) ** 4) / 25) / 2
+    plt.figure(figsize=(5,7), facecolor='w')
+    plt.plot(y, x, 'r-', linewidth=2)
+    plt.grid(True)
+    plt.title(u'胸型线', fontsize=20)
+    # plt.savefig('breast.png')
+    plt.show()
 
     # 5.5 心形线
     t = np.linspace(0, 2*np.pi, 100)
