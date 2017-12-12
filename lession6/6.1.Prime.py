@@ -29,7 +29,9 @@ if __name__ == "__main__":
 
     # 方法1：直接计算
     t = time()
-    p = [p for p in range(a, b) if 0 not in [p % d for d in range(2, int(math.sqrt(p)) + 1)]]
+    p = [p for p in range(a, b)
+         if 0 not in
+         [p % d for d in range(2, int(math.sqrt(p)) + 1)]]
     print(time() - t)
     print(p)
 
@@ -47,8 +49,10 @@ if __name__ == "__main__":
     print(p)
 
     # 方法4：定义
+    print('方法4')
     t = time()
     p_list = []
+    print('p_list......',p_list)
     for i in range(2, b):
         flag = True
         for p in p_list:
@@ -65,16 +69,16 @@ if __name__ == "__main__":
     # 方法5：定义和filter
     p_list2 = []
     t = time()
-    list(filter(is_prime3, list(range(2, b))))
+    a = list(filter(is_prime3, list(range(2, b))))
     print(time() - t)
     print(p_list2)
 
-    print('---------------------')
+    print('-'*len(a))
     a = 750
     b = 900
     p_list2 = []
     np.set_printoptions(linewidth=150)
-    p = np.array(list(filter(is_prime3, list(range(2, b+1)))))
+    p = np.array(list(filter(is_prime3, list(np.linspace(2, b,1)))))
     p = p[p >= a]
     print(p)
     p_rate = float(len(p)) / float(b-a+1)
