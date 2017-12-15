@@ -83,7 +83,7 @@ if __name__ == "__main__":
     print(p)
     p_rate = float(len(p)) / float(b-a+1)
     print('素数的概率：', p_rate, end='\t  ')
-    print('公正赔率：', 1/p_rate)
+    print('公正赔率：', 1/p_rate )
     print('合数的概率：', 1-p_rate, end='\t  ')
     print('公正赔率：', 1 / (1-p_rate))
 
