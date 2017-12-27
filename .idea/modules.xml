@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../huaat2017/.idea/huaat2017.iml" filepath="$PROJECT_DIR$/../huaat2017/.idea/huaat2017.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/learn_ml.iml" filepath="$PROJECT_DIR$/.idea/learn_ml.iml" />
     </modules>
   </component>
