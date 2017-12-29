@@ -39,7 +39,7 @@ if __name__ == "__main__":
         y[i] = calc_e(x)
         print('e^', x, ' = ', y[i], '(近似值)\t', math.exp(x), '(真实值)')
     plt.figure(facecolor='w')
-    mpl.rcParams['font.sans-serif'] = ['SimHei']
+    # mpl.rcParams['font.sans-serif'] = ['SimHei']
     mpl.rcParams['axes.unicode_minus'] = False
     plt.plot(t, y, 'r-', t, y, 'go', linewidth=2)
     plt.title('Taylor展式的应用 - 指数函数', fontsize=18)

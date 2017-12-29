@@ -19,14 +19,15 @@ def func(a):
 
 
 if __name__ == '__main__':
-    mpl.rcParams['font.sans-serif'] = ['SimHei']
+    # mpl.rcParams['font.sans-serif'] = ['SimHei']
     mpl.rcParams['axes.unicode_minus'] = False
     x = np.linspace(0, 30, num=50)
     func_ = np.frompyfunc(func, 1, 1)
-    #y = func_(x)
-    y = np.sqrt(x)
+    y1 = func_(x)
+    y2 = np.sqrt(x)
     plt.figure(figsize=(10, 5), facecolor='w')
-    plt.plot(x, y, 'ro-', lw=2, markersize=6)
+    plt.plot(x, y1, 'ro-', lw=1, markersize=6,label='y1')
+    plt.plot(x, y2, 'b-.', lw=2, markersize=6 , label='y2')
     plt.grid(b=True, ls=':')
     plt.xlabel('X', fontsize=16)
     plt.ylabel('Y', fontsize=16)
