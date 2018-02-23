@@ -1,5 +1,5 @@
 # !/usr/bin/python
-# -*- coding:utf-8 -*-
+# -*- coding:gbk -*-
 
 import numpy as np
 import matplotlib as mpl
@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 
 if __name__ == "__main__":
-    stock_max, stock_min, stock_close, stock_amount = np.loadtxt('..\\SH600000.txt', delimiter='\t', skiprows=2, usecols=(2, 3, 4, 5), unpack=True)
+    stock_max, stock_min, stock_close, stock_amount = np.loadtxt('SH600000.txt', delimiter='\t', usecols=(2, 3, 4, 5), unpack=True)
     N = 100
     stock_close = stock_close[:N]
     print(stock_close)
@@ -32,20 +32,20 @@ if __name__ == "__main__":
     mpl.rcParams['font.sans-serif'] = ['SimHei']
     mpl.rcParams['axes.unicode_minus'] = False
     plt.figure(facecolor='w')
-    plt.plot(np.arange(N), stock_close, 'ro-', linewidth=2, label='åŸå§‹æ”¶ç›˜ä»·')
+    plt.plot(np.arange(N), stock_close, 'ro-', linewidth=2, label='Ô­Ê¼ÊÕÅÌ¼Û')
     t = np.arange(n-1, N)
-    plt.plot(t, stock_sma, 'b-', linewidth=2, label='ç®€å•ç§»åŠ¨å¹³å‡çº¿')
-    plt.plot(t, stock_ema, 'g-', linewidth=2, label='æŒ‡æ•°ç§»åŠ¨å¹³å‡çº¿')
+    plt.plot(t, stock_sma, 'b-', linewidth=2, label='¼òµ¥ÒÆ¶¯Æ½¾ùÏß')
+    plt.plot(t, stock_ema, 'g-', linewidth=2, label='Ö¸ÊıÒÆ¶¯Æ½¾ùÏß')
     plt.legend(loc='upper right')
-    plt.title('è‚¡ç¥¨æ”¶ç›˜ä»·ä¸æ»‘åŠ¨å¹³å‡çº¿MA', fontsize=15)
+    plt.title('¹ÉÆ±ÊÕÅÌ¼ÛÓë»¬¶¯Æ½¾ùÏßMA', fontsize=15)
     plt.grid(True)
     plt.show()
 
     print(plt.figure(figsize=(8.8, 6.6), facecolor='w'))
-    plt.plot(np.arange(N), stock_close, 'ro-', linewidth=1, label='åŸå§‹æ”¶ç›˜ä»·')
-    plt.plot(t, stock_ema, 'g-', linewidth=2, label='æŒ‡æ•°ç§»åŠ¨å¹³å‡çº¿')
-    plt.plot(t, stock_ema_hat, '-', color='#FF4040', linewidth=3, label='æŒ‡æ•°ç§»åŠ¨å¹³å‡çº¿ä¼°è®¡')
+    plt.plot(np.arange(N), stock_close, 'ro-', linewidth=1, label='Ô­Ê¼ÊÕÅÌ¼Û')
+    plt.plot(t, stock_ema, 'g-', linewidth=2, label='Ö¸ÊıÒÆ¶¯Æ½¾ùÏß')
+    plt.plot(t, stock_ema_hat, '-', color='#FF4040', linewidth=3, label='Ö¸ÊıÒÆ¶¯Æ½¾ùÏß¹À¼Æ')
     plt.legend(loc='upper right')
-    plt.title('æ»‘åŠ¨å¹³å‡çº¿MAçš„ä¼°è®¡', fontsize=15)
+    plt.title('»¬¶¯Æ½¾ùÏßMAµÄ¹À¼Æ', fontsize=15)
     plt.grid(True)
     plt.show()

@@ -22,7 +22,7 @@ def convolve(image, weight):
 # image_new = 255 * (image_new - image_new.min()) / (image_new.max() - image_new.min())
 
 if __name__ == "__main__":
-    A = Image.open("..\\son.png", 'r')
+    A = Image.open("son.png", 'r')
     output_path = '.\\ImageConvolve\\'
     if not os.path.exists(output_path):
         os.mkdir(output_path)

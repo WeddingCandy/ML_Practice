@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
     # 二维图像
     N = 30
-    density, edges = np.histogramdd(d, bins=[N, N])
+    density, edges = np.histogramdd(d, bins=[N, N]) #多维的版本
     print('样本总数：', np.sum(density))
     density /= density.max()
     x = y = np.arange(N)

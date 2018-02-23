@@ -30,7 +30,7 @@ def draw_mandelbrot(center_x, center_y, size):
     plt.xlim((np.min(x), np.max(x)))
     plt.ylim((np.min(y), np.max(y)))
     plt.savefig(str(size)+'.png')
-    # plt.show()
+    plt.show()
 
 
 if __name__ == '__main__':

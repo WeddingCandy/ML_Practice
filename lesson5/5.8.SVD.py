@@ -36,9 +36,9 @@ def restore2(sigma, u, v, K):  # 奇异值、左特征向量、右特征向量
 
 
 if __name__ == "__main__":
-    A = Image.open("..\\lena.png", 'r')
+    A = Image.open("shan3.jpeg", 'r')
     print(A)
-    output_path = r'.\SVD_Output'
+    output_path = r'../SVD_Output'
     if not os.path.exists(output_path):
         os.mkdir(output_path)
     a = np.array(A)

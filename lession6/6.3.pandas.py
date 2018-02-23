@@ -40,7 +40,7 @@ def fill_state_code(row):
 
 if __name__ == "__main__":
     pd.set_option('display.width', 200)
-    data = pd.read_excel('..\\sales.xlsx', sheetname='sheet1', header=0)
+    data = pd.read_excel('sales.xlsx', sheetname='sheet1', header=0)
     print('data.head() = \n', data.head())
     print('data.tail() = \n', data.tail())
     print('data.dtypes = \n', data.dtypes)
@@ -65,10 +65,10 @@ if __name__ == "__main__":
     print(s2.T.reindex(columns=data.columns))
     # 即：
     s = pd.DataFrame(data=data[['Jan', 'Feb', 'Mar', 'total']].sum()).T
-    s = s.reindex(columns=data.columns, fill_value=0)
+    s = s.reindex(columns=data.columns, fill_value=0) #重置索引
     print(s)
-    data = data.append(s, ignore_index=True)
-    data = data.rename(index={15:'Total'})
+    data = data.append(s, ignore_index=True)#忽略索引
+    data = data.rename(index={15:'Total'})#会跳过其他索引设置为新的选项
     print(data.tail())
 
     # apply的使用
@@ -100,13 +100,13 @@ if __name__ == "__main__":
     print(fuzz.ratio('Python Package', 'PythonPackage'))
     print(process.extract('Mississippi', states))
     print(process.extract('Mississipi', states, limit=1))
-    print(process.extractOne('Mississipi', states))
+    print(process.extractOne('Mississipi', states))#等价的
     data.apply(find_state_code, axis=1)
 
     print('Before Correct State:\n', data['state'])
     data['state'] = data.apply(correct_state, axis=1)
     print('After Correct State:\n', data['state'])
-    data.insert(5, 'State Code', np.nan)
+    data.insert(5, 'State Code', np.nan)#第六列，列名，值
     data['State Code'] = data.apply(fill_state_code, axis=1)
     print(data)
 

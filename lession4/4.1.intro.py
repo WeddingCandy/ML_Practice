@@ -17,7 +17,6 @@ from scipy.interpolate import CubicSpline
 import scipy as sp
 import math
 # import seaborn
-import test1
 
 def residual(t, x, y):
     return y - (t[0] * x ** 2 + t[1] * x + t[2])
@@ -238,6 +237,21 @@ if __name__ == "__main__":
         t2 = time.clock() - start
         print(j, ": ", t1, t2, t2/t1)
 
+
+    for c in np.logspace(0 , 3 , 4 , base=10):
+        x = np.linspace(0,10,c)
+        start = time.clock()
+        y = np.sin(x)
+        t1 = time.clock() - start
+
+        x = x.tolist()
+        start2 = time.clock()
+        for i, t in enumerate(x):
+            x[i] = math.sin(t)
+        t2 = time.clock() - start2
+        print(c, ": ", t1, t2, t2 / t1)
+
+
     # 4.2 元素去重
     # 4.2.1直接使用库函数
     a = np.array((1, 2, 3, 4, 5, 5, 7, 3, 2, 2, 8, 8))
@@ -270,7 +284,7 @@ if __name__ == "__main__":
     print('b = \n', b)
     print('c = \n', c)
     print('d = \n', d)
-    s = np.stack((a, b, c, d), axis=0)
+    s = np.stack((a, b, c, d), axis=0) #abcd直接做堆叠
     print('axis = 0 ', s.shape, '\n', s)
     s = np.stack((a, b, c, d), axis=1)
     print('axis = 1 ', s.shape, '\n', s)
@@ -284,15 +298,15 @@ if __name__ == "__main__":
     print(np.dot(a, b))
     print(a * b)
 
-    a = np.arange(1 , 10)
+    a = np.arange(1, 10)
     print(a)
-    b = np.arange(20 , 25)
+    b = np.arange(20, 25)
     print(b)
     print(np.concatenate((a, b)))
 
     # 5.绘图
     # 5.1 绘制正态分布概率密度函数
-    mpl.rcParams['font.sans-serif'] = [u'sans-serif']  #FangSong/黑体 FangSong/KaiTi
+    mpl.rcParams['font.sans-serif'] = [u'SimHei']  #FangSong/黑体 FangSong/KaiTi
     mpl.rcParams['axes.unicode_minus'] = False
     mu = 0
     sigma = 1
@@ -308,32 +322,32 @@ if __name__ == "__main__":
     plt.xlabel('X', fontsize=15)
     plt.ylabel('Y', fontsize=15)
     plt.title(u'高斯分布函数', fontsize=18)    #
-    plt.grid(True)
+    plt.grid(True,linestyle = '--') #ls 虚线
     plt.show()
 
     # 5.2 损失函数：Logistic损失(-1,1)/SVM Hinge损失/ 0/1损失
-    plt.figure(figsize=(10,8))
+    plt.figure(figsize=(5,4))
     x = np.linspace(start=-2, stop=3, num=1001, dtype=np.float)
     y_logit = np.log(1 + np.exp(-x)) / math.log(2)
     y_boost = np.exp(-x)
     y_01 = x < 0
     y_hinge = 1.0 - x
     y_hinge[y_hinge < 0] = 0
-    plt.plot(x, y_logit, 'r-', label='Logistic Loss', linewidth=2)
+    plt.plot(x, y_logit, 'r-',mec = 'k', label='Logistic Loss', linewidth=2)
     plt.plot(x, y_01, 'g-', label='0/1 Loss', linewidth=2)
     plt.plot(x, y_hinge, 'b-', label='Hinge Loss', linewidth=2)
     plt.plot(x, y_boost, 'm--', label='Adaboost Loss', linewidth=2)
-    plt.grid()
+    plt.grid(True,ls=":")
     plt.legend(loc='upper right')
-    # plt.savefig('1.png')
+    # plt.savefig('2.png')
     plt.show()
 
     # 5.3 x^x
     plt.figure(facecolor='w')
     x = np.linspace(-1.3, 1.3, 101)
-    y = x**x
+    y = f(x)
     plt.plot(x, y, 'g-', label='x^x', linewidth=2)
-    plt.grid()
+    plt.grid(True,ls='-.')
     plt.legend(loc='upper left')
     plt.show()
 
@@ -368,7 +382,7 @@ if __name__ == "__main__":
     y = np.sin(x)
     plt.bar(x, y, width=0.04, linewidth=0.2)
     plt.plot(x, y, 'r--', linewidth=2)
-    plt.title(u'Sin曲线')
+    plt.title(u'Sin curve')
     plt.xticks(rotation=-60)
     plt.xlabel('X')
     plt.ylabel('Y')
@@ -379,7 +393,7 @@ if __name__ == "__main__":
     # 6.1 均匀分布
     x = np.random.rand(10000)
     t = np.arange(len(x))
-    plt.hist(x, 30, color='m', alpha=0.5, label=u'均匀分布') #alpha 是调直方图颜色深浅的
+    plt.hist(x, 30, color='m', alpha=0.5, label=u'均匀分布',normed=True) #alpha 是调直方图颜色深浅的
     # plt.plot(t, x, 'g.', label=u'均匀分布')
     plt.legend(loc='upper left')
     plt.grid()
@@ -491,32 +505,32 @@ if __name__ == "__main__":
     # z = x*y*np.exp(-(x**2 + y**2)/2) / math.sqrt(2*math.pi)
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-    # ax.plot_surface(x, y, z, rstride=5, cstride=5, cmap=cm.coolwarm, linewidth=0.1)  #
-    ax.plot_surface(x, y, z, rstride=3, cstride=3, cmap=cm.gist_heat, linewidth=0.5)
+    ax.plot_surface(x, y, z, rstride=5, cstride=5, cmap=cm.coolwarm, linewidth=0.1)  #
+    # ax.plot_surface(x, y, z, rstride=3, cstride=3, cmap=cm.gist_heat, linewidth=0.5)
     plt.show()
-    cmaps = [('Perceptually Uniform Sequential',
-              ['viridis', 'inferno', 'plasma', 'magma']),
-             ('Sequential', ['Blues', 'BuGn', 'BuPu',
-                             'GnBu', 'Greens', 'Greys', 'Oranges', 'OrRd',
-                             'PuBu', 'PuBuGn', 'PuRd', 'Purples', 'RdPu',
-                             'Reds', 'YlGn', 'YlGnBu', 'YlOrBr', 'YlOrRd']),
-             ('Sequential (2)', ['afmhot', 'autumn', 'bone', 'cool',
-                                 'copper', 'gist_heat', 'gray', 'hot',
-                                 'pink', 'spring', 'summer', 'winter']),
-             ('Diverging', ['BrBG', 'bwr', 'coolwarm', 'PiYG', 'PRGn', 'PuOr',
-                            'RdBu', 'RdGy', 'RdYlBu', 'RdYlGn', 'Spectral',
-                            'seismic']),
-             ('Qualitative', ['Accent', 'Dark2', 'Paired', 'Pastel1',
-                              'Pastel2', 'Set1', 'Set2', 'Set3']),
-             ('Miscellaneous', ['gist_earth', 'terrain', 'ocean', 'gist_stern',
-                                'brg', 'CMRmap', 'cubehelix',
-                                'gnuplot', 'gnuplot2', 'gist_ncar',
-                                'nipy_spectral', 'jet', 'rainbow',
-                                'gist_rainbow', 'hsv', 'flag', 'prism'])]
+    # cmaps = [('Perceptually Uniform Sequential',
+    #           ['viridis', 'inferno', 'plasma', 'magma']),
+    #          ('Sequential', ['Blues', 'BuGn', 'BuPu',
+    #                          'GnBu', 'Greens', 'Greys', 'Oranges', 'OrRd',
+    #                          'PuBu', 'PuBuGn', 'PuRd', 'Purples', 'RdPu',
+    #                          'Reds', 'YlGn', 'YlGnBu', 'YlOrBr', 'YlOrRd']),
+    #          ('Sequential (2)', ['afmhot', 'autumn', 'bone', 'cool',
+    #                              'copper', 'gist_heat', 'gray', 'hot',
+    #                              'pink', 'spring', 'summer', 'winter']),
+    #          ('Diverging', ['BrBG', 'bwr', 'coolwarm', 'PiYG', 'PRGn', 'PuOr',
+    #                         'RdBu', 'RdGy', 'RdYlBu', 'RdYlGn', 'Spectral',
+    #                         'seismic']),
+    #          ('Qualitative', ['Accent', 'Dark2', 'Paired', 'Pastel1',
+    #                           'Pastel2', 'Set1', 'Set2', 'Set3']),
+    #          ('Miscellaneous', ['gist_earth', 'terrain', 'ocean', 'gist_stern',
+    #                             'brg', 'CMRmap', 'cubehelix',
+    #                             'gnuplot', 'gnuplot2', 'gist_ncar',
+    #                             'nipy_spectral', 'jet', 'rainbow',
+    #                             'gist_rainbow', 'hsv', 'flag', 'prism'])]
 
     # 8.1 scipy
     # 线性回归例1
-    x = np.linspace(-2, 2, 50)
+    x = np.linspace(-2, 2, 50,endpoint=True)
     A, B, C = 2, 3, -1
     y = (A * x ** 2 + B * x + C) + np.random.rand(len(x))*0.75
 
