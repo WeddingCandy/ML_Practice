@@ -14,7 +14,7 @@ if __name__ == '__main__':
     pd.set_option('display.width', 300)
     pd.set_option('display.max_columns', 300)
 
-    data = pd.read_csv('..\\car.data', header=None)
+    data = pd.read_csv('car.data', header=None)
     n_columns = len(data.columns)
     columns = ['buy', 'maintain', 'doors', 'persons', 'boot', 'safety', 'accept']
     new_columns = dict(list(zip(np.arange(n_columns), columns)))

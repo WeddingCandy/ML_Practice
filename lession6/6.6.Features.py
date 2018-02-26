@@ -2,14 +2,15 @@
 
 import pandas as pd
 import numpy as np
-from sklearn.decomposition import PCA
+from sklearn.decomposition import PCA #PCA降维
 from sklearn.feature_selection import SelectKBest, SelectPercentile, chi2
-from sklearn.linear_model import LogisticRegressionCV
-from sklearn import metrics
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.manifold import TSNE
+#SelectKBest:选择排名前几的项 ;SelectPercentile:选择前百分之几的项 ；chi2：处理分类问题 ;f_regression :回归用的指标
+from sklearn.linear_model import LogisticRegressionCV #LR交叉验证
+from sklearn import metrics #评估方法  AUC,ROC
+from sklearn.model_selection import train_test_split #随机划分训练集和测试集
+from sklearn.pipeline import Pipeline#将多个学习器组成流水线
+from sklearn.preprocessing import PolynomialFeatures #生成多项式
+from sklearn.manifold import TSNE #TSNE降维
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
@@ -17,15 +18,18 @@ import matplotlib.patches as mpatches
 
 def extend(a, b):
     return 1.05*a-0.05*b, 1.05*b-0.05*a
+def extend(x,y):
+    return  1.05*x-0.05*y,1.05*y-0.05*x
 
 
 if __name__ == '__main__':
-    stype = 'pca'
+    stype = 'tsne'
+    # stype = 'SelectKBest'
     pd.set_option('display.width', 200)
-    data = pd.read_csv('..\\iris.data', header=None)
+    data = pd.read_csv('/Users/Apple/PycharmProjects/learn_ml/lession6/iris.data', header=None)
     # columns = np.array(['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'type'])
     columns = np.array(['花萼长度', '花萼宽度', '花瓣长度', '花瓣宽度', '类型'])
-    data.rename(columns=dict(list(zip(np.arange(5), columns))), inplace=True)
+    data.rename(columns=dict(list(zip(np.arange(5), columns))), inplace=True) #zip 函数能打包成1match1的元祖
     data['类型'] = pd.Categorical(data['类型']).codes
     print(data.head(5))
     x = data[columns[:-1]]
@@ -33,12 +37,17 @@ if __name__ == '__main__':
 
     if stype == 'pca':
         pca = PCA(n_components=2, whiten=True, random_state=0)
-        x = pca.fit_transform(x)
+        x = pca.fit_transform()
         print('各方向方差：', pca.explained_variance_)
         print('方差所占比例：', pca.explained_variance_ratio_)
         x1_label, x2_label = '组分1', '组分2'
         title = '鸢尾花数据PCA降维'
-    else:
+    if stype == 'tsne':
+        tsne = TSNE(n_components =2 ,learning_rate=100)
+        x = tsne.fit_transform(x)
+        x1_label, x2_label = '组分1', '组分2'
+        title = '鸢尾花数据TSNE降维'
+    if stype == 'SelectKBest':
         fs = SelectKBest(chi2, k=2)
         # fs = SelectPercentile(chi2, percentile=60)
         fs.fit(x, y)
@@ -54,7 +63,7 @@ if __name__ == '__main__':
     mpl.rcParams['font.sans-serif'] = 'SimHei'
     mpl.rcParams['axes.unicode_minus'] = False
     plt.figure(facecolor='w')
-    plt.scatter(x[:, 0], x[:, 1], s=30, c=y, marker='o', cmap=cm_dark)
+    plt.scatter(x[:, 0], x[:, 1],s=30, c=y, marker='o', cmap=cm_dark)
     plt.grid(b=True, ls=':', color='k')
     plt.xlabel(x1_label, fontsize=12)
     plt.ylabel(x2_label, fontsize=12)
