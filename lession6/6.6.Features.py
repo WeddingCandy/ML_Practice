@@ -18,13 +18,12 @@ import matplotlib.patches as mpatches
 
 def extend(a, b):
     return 1.05*a-0.05*b, 1.05*b-0.05*a
-def extend(x,y):
-    return  1.05*x-0.05*y,1.05*y-0.05*x
 
 
 if __name__ == '__main__':
-    stype = 'tsne'
-    # stype = 'SelectKBest'
+    # stype = pca
+    # stype = 'tsne'
+    stype = 'SelectKBest'
     pd.set_option('display.width', 200)
     data = pd.read_csv('/Users/Apple/PycharmProjects/learn_ml/lession6/iris.data', header=None)
     # columns = np.array(['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'type'])
@@ -51,9 +50,14 @@ if __name__ == '__main__':
         fs = SelectKBest(chi2, k=2)
         # fs = SelectPercentile(chi2, percentile=60)
         fs.fit(x, y)
-        idx = fs.get_support(indices=True)
+        print('fs',fs)
+        ß
+        print('分数',fs.scores_)
         print('fs.get_support() = ', idx)
-        x = x[idx]
+        # print('x' , x)
+        print(x.index)
+        x = x.iloc[:,2:4]
+        print(x)
         x = x.values    # 为下面使用方便，DataFrame转换成ndarray
         x1_label, x2_label = columns[idx]
         title = '鸢尾花数据特征选择'
@@ -63,7 +67,7 @@ if __name__ == '__main__':
     mpl.rcParams['font.sans-serif'] = 'SimHei'
     mpl.rcParams['axes.unicode_minus'] = False
     plt.figure(facecolor='w')
-    plt.scatter(x[:, 0], x[:, 1],s=30, c=y, marker='o', cmap=cm_dark)
+    plt.scatter(x[:, 0], x[:, 1],s=30, c='y', marker='o', cmap=cm_dark)
     plt.grid(b=True, ls=':', color='k')
     plt.xlabel(x1_label, fontsize=12)
     plt.ylabel(x2_label, fontsize=12)
@@ -88,16 +92,17 @@ if __name__ == '__main__':
     x2_min, x2_max = extend(x[:, 1].min(), x[:, 1].max())   # 第1列的范围
     t1 = np.linspace(x1_min, x1_max, N)
     t2 = np.linspace(x2_min, x2_max, M)
-    x1, x2 = np.meshgrid(t1, t2)                    # 生成网格采样点
-    x_show = np.stack((x1.flat, x2.flat), axis=1)   # 测试点
+    x1, x2 = np.meshgrid(t1, t2)                    # 生成网格采样点;生成网格型数据，可以接受两个一维数组生成两个二维矩阵
+    #生成的是：t1(len(t1）*len(t2))、t2（len(t2)*len(t1)）
+    x_show = np.stack((x1.flat, x2.flat), axis=1)   # 测试点,从N*M 变成M*N
     y_hat = model.predict(x_show)  # 预测值
     y_hat = y_hat.reshape(x1.shape)  # 使之与输入的形状相同
     plt.figure(facecolor='w')
-    plt.pcolormesh(x1, x2, y_hat, cmap=cm_light)  # 预测值的显示
+    plt.pcolormesh(x1, x2, y_hat, cmap=cm_light)  # 预测值的显示,就是颜色分类
     plt.scatter(x[:, 0], x[:, 1], s=30, c=y, edgecolors='k', cmap=cm_dark)  # 样本的显示
     plt.xlabel(x1_label, fontsize=12)
     plt.ylabel(x2_label, fontsize=12)
-    plt.xlim(x1_min, x1_max)
+    plt.xlim(x1_min, x1_max)#坐标轴长度
     plt.ylim(x2_min, x2_max)
     plt.grid(b=True, ls=':', color='k')
     # 画各种图
