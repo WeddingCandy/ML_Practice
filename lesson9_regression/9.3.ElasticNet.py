@@ -13,7 +13,7 @@ import seaborn
 
 
 def xss(y, y_hat):
-    y = y.ravel()
+    y = y.ravel()#多维数组降至一维
     y_hat = y_hat.ravel()
     # Version 1
     tss = ((y - np.average(y)) ** 2).sum()
@@ -44,26 +44,27 @@ if __name__ == "__main__":
     y = x**2 - 4*x - 3 + np.random.randn(N)
     x.shape = -1, 1
     y.shape = -1, 1
+    alpha_can = np.logspace(-3, 2, 10)
 
     models = [Pipeline([
         ('poly', PolynomialFeatures()),
         ('linear', LinearRegression(fit_intercept=False))]),
         Pipeline([
             ('poly', PolynomialFeatures()),
-            ('linear', RidgeCV(alphas=np.logspace(-3, 2, 10), fit_intercept=False))]),
+            ('linear', RidgeCV(alphas=alpha_can, fit_intercept=False))]),
         Pipeline([
             ('poly', PolynomialFeatures()),
-            ('linear', LassoCV(alphas=np.logspace(-3, 2, 10), fit_intercept=False))]),
+            ('linear', LassoCV(alphas=alpha_can, fit_intercept=False))]),
         Pipeline([
             ('poly', PolynomialFeatures()),
-            ('linear', ElasticNetCV(alphas=np.logspace(-3, 2, 10), l1_ratio=[.1, .5, .7, .9, .95, .99, 1],
+            ('linear', ElasticNetCV(alphas=alpha_can, l1_ratio=[.1, .5, .7, .9, .95, .99, 1],
                                     fit_intercept=False))])
     ]
     mpl.rcParams['font.sans-serif'] = ['simHei']
     mpl.rcParams['axes.unicode_minus'] = False
     np.set_printoptions(suppress=True)
 
-    plt.figure(figsize=(18, 12), facecolor='w')
+    plt.figure(figsize=(10, 7), facecolor='w')
     d_pool = np.arange(1, N, 1)  # 阶
     m = d_pool.size
     clrs = []  # 颜色

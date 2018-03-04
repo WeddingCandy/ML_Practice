@@ -23,7 +23,7 @@ def not_empty(s):
 if __name__ == "__main__":
     warnings.filterwarnings(action='ignore')
     np.set_printoptions(suppress=True)
-    file_data = pd.read_csv('..\\housing.data', header=None)
+    file_data = pd.read_csv('housing.data', header=None)
     # a = np.array([float(s) for s in str if s != ''])
     data = np.empty((len(file_data), 14))
     for i, d in enumerate(file_data.values):
