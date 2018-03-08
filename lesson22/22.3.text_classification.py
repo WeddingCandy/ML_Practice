@@ -20,7 +20,7 @@ import matplotlib as mpl
 def test_clf(clf):
     print('分类器：', clf)
     alpha_can = np.logspace(-3, 2, 10)
-    model = GridSearchCV(clf, param_grid={'alpha': alpha_can}, cv=5)
+    model = GridSearchCV(clf, param_grid={'alpha': alpha_can}, cv=5) #进行5折的分析
     m = alpha_can.size
     if hasattr(clf, 'alpha'):
         model.set_params(param_grid={'alpha': alpha_can})
@@ -63,13 +63,13 @@ def test_clf(clf):
 if __name__ == "__main__":
     print('开始下载/加载数据...')
     t_start = time()
-    # remove = ('headers', 'footers', 'quotes')
+    # remove = ('headers', 'footers', 'quotes') #remove的内容
     remove = ()
     categories = 'alt.atheism', 'talk.religion.misc', 'comp.graphics', 'sci.space'
     # categories = None     # 若分类所有类别，请注意内存是否够用
-    corpus_path = './corpora_data'
-    data_train = fetch_20newsgroups(data_home=corpus_path, subset='train', categories=categories, shuffle=True, random_state=0, remove=remove)
-    data_test = fetch_20newsgroups(data_home=corpus_path, subset='test', categories=categories, shuffle=True, random_state=0, remove=remove)
+    corpus_path = 'corpora_data'
+    data_train = fetch_20newsgroups(data_home=corpus_path, subset='train', categories=None, shuffle=True, random_state= 0, remove=remove)
+    data_test = fetch_20newsgroups(data_home=corpus_path, subset='test', categories=None, shuffle=True, random_state= 0, remove=remove)
     t_end = time()
     print('下载/加载数据完成，耗时%.3f秒' % (t_end - t_start))
     print('数据类型：', type(data_train))

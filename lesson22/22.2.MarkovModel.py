@@ -8,16 +8,30 @@ from matplotlib import animation
 from PIL import Image
 
 
-def update(f):
+def calc_next_loc(now, loc, directions):
+    near_index = np.array([(-1, -1), (-1, 0), (-1, 1),
+                  (0, -1), (0, 1),
+                  (1, -1), (1, 0), (1, 1)])
+    directions_index = np.array([7, 6, 5, 0, 4, 1, 2, 3])
+    nn = now + near_index
+    ii, jj = nn[:, 0], nn[:, 1]
+    ii[ii >= m] = 0
+    jj[jj >= n] = 0
+    return np.dot(loc[ii, jj], directions[ii, jj, directions_index])
+
+
+
+def update(f) :
     global loc
-    if f == 0:
+    if f  == 0:
         loc = loc_prime
-    next_loc = np.zeros((m, n), dtype=np.float)
-    for i in np.arange(m):
+    next_loc = np.zeros((m,n) , dtype = np.float )
+    for i in np.arange(n):
         for j in np.arange(n):
             next_loc[i, j] = calc_next_loc(np.array([i, j]), loc, directions)
     loc = next_loc / np.max(next_loc)
     im.set_array(loc)
+
 
     # Save
     if save_image:
@@ -33,16 +47,6 @@ def update(f):
     return [im]
 
 
-def calc_next_loc(now, loc, directions):
-    near_index = np.array([(-1, -1), (-1, 0), (-1, 1),
-                  (0, -1), (0, 1),
-                  (1, -1), (1, 0), (1, 1)])
-    directions_index = np.array([7, 6, 5, 0, 4, 1, 2, 3])
-    nn = now + near_index
-    ii, jj = nn[:, 0], nn[:, 1]
-    ii[ii >= m] = 0
-    jj[jj >= n] = 0
-    return np.dot(loc[ii, jj], directions[ii, jj, directions_index])
 
 
 if __name__ == '__main__':
