@@ -10,16 +10,38 @@ import warnings
 
 
 if __name__ == '__main__':
-    f = open('./LDA_test.txt')
+    # try:
+    #     f = open('/Users/Apple/PycharmProjects/learn_ml/lesson22/LDA_test.txt','r')
+    # finally:
+    #     if f:
+    #         f.close()
+    f = open('/Users/Apple/PycharmProjects/learn_ml/lesson22/LDA_test.txt', 'r')
     stop_list = set('for a of the and to in'.split())
     # texts = [line.strip().split() for line in f]
     # print 'Before'
     # pprint(texts)
     print('After')
     texts = [[word for word in line.strip().lower().split() if word not in stop_list] for line in f]
+    '''
+    strip() 只能去除头尾
+    '''
+    #等价
+    # text = []
+    # for line in f:
+    #     for word in line.strip().lower().split():
+    #         if word not in stop_list:
+    #             text.append(word)
     print('Text = ')
     pprint(texts)
 
+    '''
+        corpora:创建字典
+        corpora.Dictionary() 主要将一个array对象转换成字典
+        corpora.add_documents() 补充新的文档到字典中
+        doc2bow() 变成词袋，分别为id和出现次数
+        a = models.TfidfModel(corpus) 使用tf-idf模型得出该评论集的tf-idf模型
+        b = a[corpus]  此处已经计算得出所有评论的tf-idf 值
+    '''
     dictionary = corpora.Dictionary(texts)
     print(dictionary)
     V = len(dictionary)
@@ -32,11 +54,11 @@ if __name__ == '__main__':
         print(c)
 
     print('\nLSI Model:')
-    lsi = models.LsiModel(corpus_tfidf, num_topics=2, id2word=dictionary)
+    lsi = models.LsiModel(corpus_tfidf, num_topics=3, id2word=dictionary)
     topic_result = [a for a in lsi[corpus_tfidf]]
     pprint(topic_result)
     print('LSI Topics:')
-    pprint(lsi.print_topics(num_topics=2, num_words=5))
+    pprint(lsi.print_topics(num_topics=3, num_words=5))
     similarity = similarities.MatrixSimilarity(lsi[corpus_tfidf])   # similarities.Similarity()
     print('Similarity:')
     pprint(list(similarity))
@@ -52,7 +74,7 @@ if __name__ == '__main__':
         print(doc_topic)
     for topic_id in range(num_topics):
         print('Topic', topic_id)
-        # pprint(lda.get_topic_terms(topicid=topic_id))
+        pprint(lda.get_topic_terms(topicid=topic_id))
         pprint(lda.show_topic(topic_id))
     similarity = similarities.MatrixSimilarity(lda[corpus_tfidf])
     print('Similarity:')

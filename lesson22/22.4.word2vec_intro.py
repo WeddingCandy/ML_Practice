@@ -23,7 +23,7 @@ def print_list(a):
 
 
 if __name__ == '__main__':
-    if not os.path.exists('news.model'):
+    if not os.path.exists('news.model'): #判断模型是否存在
         sentences = LoadCorpora('news.dat')
         t_start = time()
         model = Word2Vec(sentences, size=200, min_count=5, workers=8)  # 词向量维度为200，丢弃出现次数少于5次的词
@@ -33,11 +33,11 @@ if __name__ == '__main__':
     model = Word2Vec.load('news.model')
     print(type(model))
     print('词典中词的个数：', len(model.wv.vocab))
-    for i, word in enumerate(model.wv.vocab):
-        print(word, end=' ')
+    for i, word in enumerate(model.wv.vocab): #enumerate
+        # print(word, end=' ')
         if i % 25 == 24:
             print()
-    print()
+    # print()
 
     intrested_words = ('中国', '手机', '学习', '人民', '名义')
     print('特征向量：')
@@ -56,7 +56,7 @@ if __name__ == '__main__':
             w2 = words[j]
             print('%s 和 %s 的相似度为：%.6f' % (w1, w2, model.similarity(w1, w2)))
 
-    print('========================')
+    print('================================================')
     opposites = ((['中国', '城市'], ['学生']),
                  (['男', '工作'], ['女']),
                  (['俄罗斯', '美国', '英国'], ['日本']))
@@ -69,8 +69,8 @@ if __name__ == '__main__':
         for word, similar in result:
             print('\t', word, similar)
 
-    print('========================')
+    print('================================================')
     words_list = ('苹果 三星 美的 海尔', '中国 日本 韩国 美国 北京',
                   '医院 手术 护士 医生 感染 福利', '爸爸 妈妈 舅舅 爷爷 叔叔 阿姨 老婆')
     for words in words_list:
-        print(words, '离群词：', model.doesnt_match(words.split(' ')))
+        print(words, '离群词：', model.doesnt_match(words.split(' '))) #离群情况

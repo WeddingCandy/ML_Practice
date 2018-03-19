@@ -9,7 +9,7 @@ class LoadCorpora(object):
     def __init__(self, dir_name):
         self.path = dir_name
 
-    def __iter__(self):
+    def __iter__(self):#迭代器
         for file_name in os.listdir(self.path):
             path_name = os.path.join(self.path, file_name)
             print(path_name)
@@ -26,7 +26,7 @@ def print_list(a):
 
 
 if __name__ == '__main__':
-    corpora_path = './sogou_corpora'
+    corpora_path = '/Volumes/d/data/200806/sogou_corpora'
     corpora_model_path = './sogou_corpora/corpora_segment'
     model_name = './sogou_corpora/200806.model'
     if not os.path.exists(model_name):
@@ -61,10 +61,10 @@ if __name__ == '__main__':
             w2 = words[j]
             print('%s 和 %s 的相似度为：%.6f' % (w1, w2, model.similarity(w1, w2)))
 
-    print('========================')
+    print('========================') #这一步做相近词和反义词的设定
     opposites = ((['中国', '城市'], ['学生']),
                  (['男', '工作'], ['女']),
-                 (['俄罗斯', '美国', '英国'], ['日本']))
+                 (['俄罗斯', '美国', '英国'], ['日本'])) #写成元组的方式
     for positive, negative in opposites:
         result = model.most_similar(positive=positive, negative=negative)
         print_list(positive)
@@ -74,7 +74,7 @@ if __name__ == '__main__':
         for word, similar in result:
             print('\t', word, similar)
 
-    print('========================')
+    print('========================') #这一步查找离群词的情况doesnt_match()
     words = '苹果 三星 小米 联想 华为 海尔 格力'
     print(words, '离群词：', model.doesnt_match(words.split(' ')))
     words = '苹果 三星 美的 海尔'

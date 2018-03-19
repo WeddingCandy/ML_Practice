@@ -19,10 +19,11 @@ import matplotlib as mpl
 
 def test_clf(clf):
     print('分类器：', clf)
-    alpha_can = np.logspace(-3, 2, 10)
-    model = GridSearchCV(clf, param_grid={'alpha': alpha_can}, cv=5) #进行5折的分析
+    alpha_can = np.logspace(-3, 2, 10) #
+    model = GridSearchCV(clf, param_grid={'alpha': alpha_can}, cv=5) #网格搜索,只要把参数输进去，就能给出最优化的结果和参数。
+    # 但是这个方法适合于小数据集，一旦数据的量级上去了，很难得出结果.
     m = alpha_can.size
-    if hasattr(clf, 'alpha'):
+    if hasattr(clf, 'alpha'): #
         model.set_params(param_grid={'alpha': alpha_can})
         m = alpha_can.size
     if hasattr(clf, 'n_neighbors'):
@@ -30,7 +31,7 @@ def test_clf(clf):
         model.set_params(param_grid={'n_neighbors': neighbors_can})
         m = neighbors_can.size
     if hasattr(clf, 'C'):
-        C_can = np.logspace(1, 3, 3)
+        C_can = np.logspace(1, 3, 4)
         gamma_can = np.logspace(-3, 0, 3)
         model.set_params(param_grid={'C':C_can, 'gamma':gamma_can})
         m = C_can.size * gamma_can.size
@@ -100,7 +101,7 @@ if __name__ == "__main__":
             RidgeClassifier(),              # 25.6(0.512), 0.003, 89.73%
             RandomForestClassifier(n_estimators=200),   # 59.319(1.977), 0.248, 77.01%
             SVC()                           # 236.59(5.258), 1.574, 90.10%
-            )
+            ) #此处建立一个分类器的集合
     result = []
     for clf in clfs:
         a = test_clf(clf)

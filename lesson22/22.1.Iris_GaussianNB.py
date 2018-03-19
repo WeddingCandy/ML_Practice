@@ -19,7 +19,7 @@ def iris_type(s):
 
 
 if __name__ == "__main__":
-    data_type = 'iris'  # iris
+    data_type = 'cars'  # iris
 
     if data_type == 'car':
         colmun_names = 'buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety', 'acceptability'#元祖的写法
