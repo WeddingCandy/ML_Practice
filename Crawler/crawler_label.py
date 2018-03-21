@@ -1,33 +1,52 @@
 # -*- coding:UTF-8 -*
 import  requests,sys
 from bs4 import  BeautifulSoup
+import pandas as pd
+import encodings
 
-# if __name__ == '__main__':
-    # list =['http://www.biqukan.com/1_1094/5403177.html','http://www.pingan.com/','http://www.biqukan.com/1_1094/']
-    # target = 'http://www.biqukan.com'
-    # req0 = requests.get(url=list[0])
-    # req1 = requests.get(url=list[1])
-    # req2 = requests.get(url = list[2])
-    # html0 = req0.text
-    # html2 = req2.text
-    #
-    # # print(req.text)
-    #
-    # bf0 = BeautifulSoup(html0,"html.parser")
-    # bf2 = BeautifulSoup(html2 ,'html.parser')
-    # texts = bf0.find_all('div',id = 'content',class_ = 'showtxt')
-    # title_list = bf2.find_all('div' ,class_ = 'listmain')
-    # a_href = BeautifulSoup(str(title_list))
-    # a = a_href.find_all('a')
-    # for each in a:
-    #     print(each.string, target + each.get('href'))
-    # # print(texts[0].text.replace('\xa0'*8,'\n\n'))
-    # # html1 = req1.text.decode('GBK')
-    # # bf1 = BeautifulSoup(html1, "html.parser")
-    # # contents = bf1.find_all('meta' ,name='keywords')
-    # # print(contents)
-    # # print(texts)
-    #
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36'}
+
+excel_sheet = pd.read_excel('C:/Users/thinkpad/Desktop/labels.xlsx',sheet_name = 'url',header= 0)
+colums_aim = excel_sheet.iloc[:,3:4]
+labels_ori = "http://"+ excel_sheet[colums_aim]
+labels = labels_ori.tolist()
+labels_length = len(labels)
+req = requests.get(url = labels[63],headers = headers)
+req0 = requests.head(url = labels[63],allow_redirects=True)
+
+html0 =req0.content
+html = req.text
+bf = BeautifulSoup(html,"html.parser")
+head = bf.find_all('meta'  )
+
+
+
+if __name__ == '__main__':
+    list =['huize.com','http://www.pingan.com/','http://www.biqukan.com/1_1094/']
+    req0 = requests.get(url=list[   0])
+    req1 = requests.get(url=list[1])
+    req2 = requests.get(url = list[2])
+    html0 = req0.text
+    html2 = req2.text
+
+    # print(req.text)
+
+    bf0 = BeautifulSoup(html0,"html.parser")
+    bf2 = BeautifulSoup(html2 ,'html.parser')
+    texts = bf0.find_all('div',id = 'content',class_ = 'showtxt')
+    title_list = bf2.find_all('div' ,class_ = 'listmain')
+    a_href = BeautifulSoup(str(title_list))
+    a = a_href.find_all('a')
+    for each in a:
+        print(each.string, target + each.get('href'))
+    print(texts[0].text.replace('\xa0'*8,'\n\n'))
+    html1 = req1.text.decode('GBK')
+    bf1 = BeautifulSoup(html1, "html.parser")
+    contents = bf1.find_all('meta' ,name='keywords')
+    print(contents)
+    print(texts)
+
 
 class downloader(object):
     def __init__(self):
