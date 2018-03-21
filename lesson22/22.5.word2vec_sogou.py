@@ -26,9 +26,9 @@ def print_list(a):
 
 
 if __name__ == '__main__':
-    corpora_path = '/Volumes/d/data/200806/sogou_corpora'
-    corpora_model_path = './sogou_corpora/corpora_segment'
-    model_name = './sogou_corpora/200806.model'
+    corpora_path = '/Volumes/d/data/200806'
+    corpora_model_path = '/Users/Apple/PycharmProjects/learn_ml/lesson22/corpora_data'
+    model_name = '/Users/Apple/PycharmProjects/learn_ml/lesson22/corpora_data/200806.model'
     if not os.path.exists(model_name):
         sentences = LoadCorpora(corpora_model_path)
         t_start = time()

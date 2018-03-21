@@ -38,7 +38,7 @@ if __name__ == '__main__':
         corpora:创建字典
         corpora.Dictionary() 主要将一个array对象转换成字典
         corpora.add_documents() 补充新的文档到字典中
-        doc2bow() 变成词袋，分别为id和出现次数
+        doc2bow() 获得每一篇文档对应的稀疏向量,变成词袋，分别为id和出现次数
         a = models.TfidfModel(corpus) 使用tf-idf模型得出该评论集的tf-idf模型
         b = a[corpus]  此处已经计算得出所有评论的tf-idf 值
     '''
@@ -47,11 +47,15 @@ if __name__ == '__main__':
     V = len(dictionary)
     corpus = [dictionary.doc2bow(text) for text in texts]
     corpus_tfidf = models.TfidfModel(corpus)[corpus]
-    corpus_tfidf = corpus
 
     print('TF-IDF:')
     for c in corpus_tfidf:
         print(c)
+    '''
+    models.LsiModel()   文档相似度
+    print_topics()  输出一共有的主题,设定主题词后会得出主要的词以及权重系数
+    similarities.MatrixSimilarity()
+    '''
 
     print('\nLSI Model:')
     lsi = models.LsiModel(corpus_tfidf, num_topics=3, id2word=dictionary)
@@ -62,7 +66,10 @@ if __name__ == '__main__':
     similarity = similarities.MatrixSimilarity(lsi[corpus_tfidf])   # similarities.Similarity()
     print('Similarity:')
     pprint(list(similarity))
-
+    '''
+    指定主题数量 num_topics
+    models.LdaModel()
+    '''
     print('\nLDA Model:')
     num_topics = 2
     lda = models.LdaModel(corpus_tfidf, num_topics=num_topics, id2word=dictionary,
@@ -74,12 +81,15 @@ if __name__ == '__main__':
         print(doc_topic)
     for topic_id in range(num_topics):
         print('Topic', topic_id)
-        pprint(lda.get_topic_terms(topicid=topic_id))
-        pprint(lda.show_topic(topic_id))
+        pprint(lda.get_topic_terms(topicid=topic_id))#词的编号
+        pprint(lda.show_topic(topic_id))#得出整个主题的关键词
     similarity = similarities.MatrixSimilarity(lda[corpus_tfidf])
     print('Similarity:')
     pprint(list(similarity))
-
+    '''
+    models.HdpModel()  
+    hda.print_topics() 可以输出主题以及主题的
+    '''
     hda = models.HdpModel(corpus_tfidf, id2word=dictionary)
     topic_result = [a for a in hda[corpus_tfidf]]
     print('\n\nUSE WITH CARE--\nHDA Model:')

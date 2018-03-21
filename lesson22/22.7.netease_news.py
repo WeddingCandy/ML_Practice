@@ -11,7 +11,7 @@ import time
 
 
 def load_stopword():
-    f_stop = open('./stopword.txt', encoding='GBK')
+    f_stop = open('stopword.txt', encoding='GBK')
     sw = [line.strip() for line in f_stop]
     f_stop.close()
     return sw
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     stop_words = load_stopword()
 
     print('开始读入语料数据 -- ')
-    f = open('./news.dat', encoding='utf-8')    #LDA_test.txt
+    f = open('news.dat', encoding='utf-8')    #LDA_test.txt
     texts = [[word for word in line.strip().lower().split() if word not in stop_words] for line in f]
     # texts = [line.strip().split() for line in f]
     print('读入语料数据完成，用时%.3f秒' % (time.time() - t_start))
