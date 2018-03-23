@@ -11,12 +11,13 @@ headers = {
 
 excel_sheet = pd.read_excel('C:/Users/thinkpad/Desktop/labels.xlsx',sheet_name = 'url',header= 0)
 # excel_sheet = pd.read_excel(r'/Users/Apple/Desktop/working/0 华院资料/HIVE库表/9 用户浏览标签 -20180319.xlsx',sheet_name = 'url',header= 0)
-colums_aim = excel_sheet.iloc[:,3:4]
+excel_sheet_extract = excel_sheet.ix[excel_sheet['数据源类别\n1为网站\n2为APP']<2,['行业一级大类','行业二级大类', 'webname']].reset_index()
+colums_aim = excel_sheet.ix[excel_sheet['数据源类别\n1为网站\n2为APP']<2 ,3:4].reset_index()
 labels_ori = "http://" + colums_aim
 labels = labels_ori.values.tolist()
 for id in range(len(labels)):
     try:
-        req = requests.get(url=labels[id][0], headers=headers ,timeout=2)
+        req = requests.get(url=labels[4][0], headers=headers ,timeout=2)
         print('have read'+str(id))
     except Exception  as e:
         print("Exception: {}".format(e))
@@ -27,9 +28,9 @@ for id in range(len(labels)):
 
 
     # html0 =req.content.decode('gbk', 'ignore')
-    html = req.text.encode(req.encoding).decode('utf-8')
+    html = req.text.encode(req.encoding).decode(req.encoding)
     bf = BeautifulSoup(html, "html.parser")
-    meta_all = bf.find_all('meta')
+    meta_all = bf.find_all('head')
     meta_tostring = str(meta_all)
     # string = '<meta content="保险，平安保险，车险，贷款，理财，信用卡，意外保险，重疾险，小额贷款，信用贷款，投资理财，个人理财，汽车保险，商业保险，少儿保险，健康保险，旅游保险，人寿保险, 医疗保险，平安普惠，平安信用卡，平安车险，平安银行" name="keywords">'
     meta_keyword = re.finditer(
@@ -41,3 +42,4 @@ for id in range(len(labels)):
         keep.append(i.group())
     keep = list(set(keep))
     print('第%s个label已完成' %(str(id)))
+    excel_sheet_extract['label_contents'] =
