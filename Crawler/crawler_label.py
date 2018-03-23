@@ -3,23 +3,28 @@ import  requests,sys
 from bs4 import  BeautifulSoup
 import pandas as pd
 import encodings
+import re
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36'}
 
 excel_sheet = pd.read_excel('C:/Users/thinkpad/Desktop/labels.xlsx',sheet_name = 'url',header= 0)
+excel_sheet = pd.read_excel(r'/Users/Apple/Desktop/working/0 华院资料/HIVE库表/9 用户浏览标签 -20180319.xlsx',sheet_name = 'url',header= 0)
 colums_aim = excel_sheet.iloc[:,3:4]
-labels_ori = "http://"+ excel_sheet[colums_aim]
-labels = labels_ori.tolist()
+labels_ori = "http://" + colums_aim
+labels = labels_ori.values.tolist()
 labels_length = len(labels)
-req = requests.get(url = labels[63],headers = headers)
-req0 = requests.head(url = labels[63],allow_redirects=True)
+req = requests.get(url = labels[63][0],headers = headers)
 
-html0 =req0.content
-html = req.text
+
+html0 =req.content.decode('gbk', 'ignore')
+html = req.text.encode(req.encoding).decode('utf-8')
 bf = BeautifulSoup(html,"html.parser")
-head = bf.find_all('meta'  )
-
+meta_all = bf.find_all('meta')
+meta_keyword = re.match(re.compile(r'keyword'),meta_all.values)
+meta_
+meta_keyword = bf.find_all('meta', string='keyword')
+#'meta',name=re.compile("keyword"
 
 
 if __name__ == '__main__':
