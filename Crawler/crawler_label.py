@@ -4,116 +4,40 @@ from bs4 import  BeautifulSoup
 import pandas as pd
 import encodings
 import re
+import pprint
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36'}
 
 excel_sheet = pd.read_excel('C:/Users/thinkpad/Desktop/labels.xlsx',sheet_name = 'url',header= 0)
-excel_sheet = pd.read_excel(r'/Users/Apple/Desktop/working/0 华院资料/HIVE库表/9 用户浏览标签 -20180319.xlsx',sheet_name = 'url',header= 0)
+# excel_sheet = pd.read_excel(r'/Users/Apple/Desktop/working/0 华院资料/HIVE库表/9 用户浏览标签 -20180319.xlsx',sheet_name = 'url',header= 0)
 colums_aim = excel_sheet.iloc[:,3:4]
 labels_ori = "http://" + colums_aim
 labels = labels_ori.values.tolist()
-labels_length = len(labels)
-req = requests.get(url = labels[63][0],headers = headers)
+for id in range(len(labels)):
+    try:
+        req = requests.get(url=labels[id][0], headers=headers ,timeout=2)
+        print('have read'+str(id))
+    except Exception  as e:
+        print("Exception: {}".format(e))
+        print('第%d个label无法爬取' %(str(id)))
+        continue
+    else:
+        data =req.json
 
 
-html0 =req.content.decode('gbk', 'ignore')
-html = req.text.encode(req.encoding).decode('utf-8')
-bf = BeautifulSoup(html,"html.parser")
-meta_all = bf.find_all('meta')
-meta_keyword = re.match(re.compile(r'keyword'),meta_all.values)
-meta_
-meta_keyword = bf.find_all('meta', string='keyword')
-#'meta',name=re.compile("keyword"
-
-
-if __name__ == '__main__':
-    list =['huize.com','http://www.pingan.com/','http://www.biqukan.com/1_1094/']
-    req0 = requests.get(url=list[   0])
-    req1 = requests.get(url=list[1])
-    req2 = requests.get(url = list[2])
-    html0 = req0.text
-    html2 = req2.text
-
-    # print(req.text)
-
-    bf0 = BeautifulSoup(html0,"html.parser")
-    bf2 = BeautifulSoup(html2 ,'html.parser')
-    texts = bf0.find_all('div',id = 'content',class_ = 'showtxt')
-    title_list = bf2.find_all('div' ,class_ = 'listmain')
-    a_href = BeautifulSoup(str(title_list))
-    a = a_href.find_all('a')
-    for each in a:
-        print(each.string, target + each.get('href'))
-    print(texts[0].text.replace('\xa0'*8,'\n\n'))
-    html1 = req1.text.decode('GBK')
-    bf1 = BeautifulSoup(html1, "html.parser")
-    contents = bf1.find_all('meta' ,name='keywords')
-    print(contents)
-    print(texts)
-
-
-class downloader(object):
-    def __init__(self):
-        self.server = 'http://www.biqukan.com/'
-        self.target = 'http://www.biqukan.com/1_1094/'
-        self.names = []            #存放章节名
-        self.urls = []            #存放章节链接
-        self.nums = 0            #章节数
-
-    def get_download_url(self):
-        req = requests.get(url = self.target)
-        html = req.text
-        div_bf = BeautifulSoup(html,'html.parser')
-        div = div_bf.find_all('div', class_ = 'listmain')
-        a_bf = BeautifulSoup(str(div[0]))
-        a = a_bf.find_all('a')
-        self.nums = len(a[15:])                                #剔除不必要的章节，并统计章节数
-        for each in a[15:]:
-            self.names.append(each.string)
-            self.urls.append(self.server + each.get('href'))
-
-    """
-    函数说明:获取章节内容
-    Parameters:
-        target - 下载连接(string)
-    Returns:
-        texts - 章节内容(string)
-    Modify:
-        2017-09-13
-    """
-    def get_contents(self, target):
-        req = requests.get(url = target)
-        html = req.text
-        bf = BeautifulSoup(html,'html.parser')
-        texts = bf.find_all('div', class_ = 'showtxt')
-        texts = texts[0].text.replace('\xa0'*8,'\n\n') #\u3000是全角的空白符 ;\xa0 是不间断空白符 &nbsp
-        return texts
-
-    """
-    函数说明:将爬取的文章内容写入文件
-    Parameters:
-        name - 章节名称(string)
-        path - 当前路径下,小说保存名称(string)
-        text - 章节内容(string)
-    Returns:
-        无
-    Modify:
-        2017-09-13
-    """
-    def writer(self, name, path, text):
-        write_flag = True
-        with open(path, 'a', encoding='utf-8') as f:
-            f.write(name + '\n')
-            f.writelines(text)
-            f.write('\n\n')
-
-if __name__ == "__main__":
-    dl = downloader()
-    dl.get_download_url()
-    print('《一年永恒》开始下载：')
-    for i in range(dl.nums):
-        dl.writer(dl.names[i], '/Users/Apple/Desktop/一念永恒.txt', dl.get_contents(dl.urls[i]))
-        sys.stdout.write("  已下载:%.3f%%" %  float(i/dl.nums) + '\r')
-        sys.stdout.flush()
-    print('《一年永恒》下载完成')
+    # html0 =req.content.decode('gbk', 'ignore')
+    html = req.text.encode(req.encoding).decode('utf-8')
+    bf = BeautifulSoup(html, "html.parser")
+    meta_all = bf.find_all('meta')
+    meta_tostring = str(meta_all)
+    # string = '<meta content="保险，平安保险，车险，贷款，理财，信用卡，意外保险，重疾险，小额贷款，信用贷款，投资理财，个人理财，汽车保险，商业保险，少儿保险，健康保险，旅游保险，人寿保险, 医疗保险，平安普惠，平安信用卡，平安车险，平安银行" name="keywords">'
+    meta_keyword = re.finditer(
+        re.compile(r'([\u4e00-\u9fa5\u3002\uff1b\uff0c\uff1a\u201c\u201d\uff08\uff09\u3001\uff1f\u300a\u300b]+){1,}'),
+        meta_tostring)
+    keep = []
+    for i in meta_keyword:
+        print(i.group() + '\n')
+        keep.append(i.group())
+    keep = list(set(keep))
+    print('第%s个label已完成' %(str(id)))
