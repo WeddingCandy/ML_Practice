@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf43e6d8-ef26-4303-a490-4f78c66ab8e2" name="Default" comment="">
+    <list default="true" id="cf43e6d8-ef26-4303-a490-4f78c66ab8e2" name="Default" comment="21st March in Office">
+      <change beforePath="" afterPath="$PROJECT_DIR$/lesson22/jieba_fenci.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/lesson22/22.5.word2vec_sogou.py" afterPath="$PROJECT_DIR$/lesson22/22.5.word2vec_sogou.py" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.6.LDA_intro.py" afterPath="$PROJECT_DIR$/lesson22/22.6.LDA_intro.py" />
       <change beforePath="$PROJECT_DIR$/lesson22/22.7.netease_news.py" afterPath="$PROJECT_DIR$/lesson22/22.7.netease_news.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,10 +44,22 @@
       <file leaf-file-name="22.5.word2vec_sogou.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lesson22/22.5.word2vec_sogou.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+            <state relative-caret-position="285">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#19#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jieba_fenci.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lesson22/jieba_fenci.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+              <folding>
+                <element signature="e#17#30#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -65,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="22.7.netease_news.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="22.7.netease_news.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lesson22/22.7.netease_news.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="35" column="18" lean-forward="true" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+            <state relative-caret-position="1170">
+              <caret line="81" column="37" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="37" />
               <folding>
                 <element signature="e#43#61#0" expanded="true" />
               </folding>
@@ -80,18 +92,8 @@
       <file leaf-file-name="22.8.reuters.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lesson22/22.8.reuters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="22.9.QQ.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lesson22/22.9.QQ.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="1230">
+              <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -121,6 +123,10 @@
       <find>split</find>
       <find>C_</find>
       <find>loc</find>
+      <find>168080</find>
+      <find>1680806</find>
+      <find>中国</find>
+      <find>OK</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/lesson5</dir>
@@ -174,9 +180,10 @@
         <option value="$PROJECT_DIR$/../Huaat2018/Crawler/crwaler_practice_pics.py" />
         <option value="$PROJECT_DIR$/lesson22/22.1.Iris_GaussianNB.py" />
         <option value="$PROJECT_DIR$/lesson22/22.4.word2vec_intro.py" />
-        <option value="$PROJECT_DIR$/lesson22/22.5.word2vec_sogou.py" />
         <option value="$PROJECT_DIR$/lesson22/22.6.LDA_intro.py" />
         <option value="$PROJECT_DIR$/lesson22/22.7.netease_news.py" />
+        <option value="$PROJECT_DIR$/lesson22/22.5.word2vec_sogou.py" />
+        <option value="$PROJECT_DIR$/lesson22/jieba_fenci.py" />
       </list>
     </option>
   </component>
@@ -209,11 +216,6 @@
             <path>
               <item name="learn_ml" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn_ml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learn_ml" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learn_ml" type="462c0819:PsiDirectoryNode" />
-              <item name="lesson22" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="learn_ml" type="b2602c69:ProjectViewProjectNode" />
@@ -264,7 +266,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.22.7.netease_news">
+  <component name="RunManager" selected="Python.jieba_fenci">
     <configuration name="22.4.word2vec_intro" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -337,38 +339,38 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="crawler_label" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="jieba_fenci" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Huaat2018/Crawler" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lesson22" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Huaat2018" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Huaat2018/Crawler/crawler_label.py" />
+      <module name="learn_ml" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lesson22/jieba_fenci.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.crawler_label" />
-      <item index="1" class="java.lang.String" itemvalue="Python.22.4.word2vec_intro" />
-      <item index="2" class="java.lang.String" itemvalue="Python.22.5.word2vec_sogou" />
-      <item index="3" class="java.lang.String" itemvalue="Python.22.6.LDA_intro" />
-      <item index="4" class="java.lang.String" itemvalue="Python.22.7.netease_news" />
+      <item index="0" class="java.lang.String" itemvalue="Python.22.4.word2vec_intro" />
+      <item index="1" class="java.lang.String" itemvalue="Python.22.5.word2vec_sogou" />
+      <item index="2" class="java.lang.String" itemvalue="Python.22.6.LDA_intro" />
+      <item index="3" class="java.lang.String" itemvalue="Python.22.7.netease_news" />
+      <item index="4" class="java.lang.String" itemvalue="Python.jieba_fenci" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.22.7.netease_news" />
-        <item index="1" class="java.lang.String" itemvalue="Python.22.6.LDA_intro" />
-        <item index="2" class="java.lang.String" itemvalue="Python.22.5.word2vec_sogou" />
-        <item index="3" class="java.lang.String" itemvalue="Python.22.4.word2vec_intro" />
-        <item index="4" class="java.lang.String" itemvalue="Python.crawler_label" />
+        <item index="0" class="java.lang.String" itemvalue="Python.jieba_fenci" />
+        <item index="1" class="java.lang.String" itemvalue="Python.22.5.word2vec_sogou" />
+        <item index="2" class="java.lang.String" itemvalue="Python.22.7.netease_news" />
+        <item index="3" class="java.lang.String" itemvalue="Python.22.6.LDA_intro" />
+        <item index="4" class="java.lang.String" itemvalue="Python.22.4.word2vec_intro" />
       </list>
     </recent_temporary>
   </component>
@@ -477,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521470100641</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="21st March in Office">
+      <created>1521597153033</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1521597153033</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -491,14 +500,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18189038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18189038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44837758" sideWeight="0.50277996" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32803813" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44837758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42414615" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4100295" sideWeight="0.49722" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829374" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -523,7 +531,8 @@
     <MESSAGE value="04th March in Home" />
     <MESSAGE value="08th March in Home" />
     <MESSAGE value="19th March in Home" />
-    <option name="LAST_COMMIT_MESSAGE" value="19th March in Home" />
+    <MESSAGE value="21st March in Office" />
+    <option name="LAST_COMMIT_MESSAGE" value="21st March in Office" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -544,34 +553,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/linear_model/logistic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1112">
-          <caret line="1634" column="0" lean-forward="true" selection-start-line="1634" selection-start-column="0" selection-end-line="1634" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/pipeline.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="124" column="39" lean-forward="true" selection-start-line="124" selection-start-column="39" selection-end-line="124" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/matplotlib/patches.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-407">
-          <caret line="86" column="8" lean-forward="false" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lession6/6.2.NagelSchreckenberg.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="45" column="21" lean-forward="false" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lession6/6.1.Prime.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -787,24 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/Crawler/crawler_label.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="79" column="39" lean-forward="true" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lesson22/22.1.Iris_GaussianNB.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding>
-            <element signature="e#42#60#0" expanded="true" />
-            <marker date="1521351160000" expanded="true" signature="2440:2517" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/gensim/models/keyedvectors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -826,19 +789,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lesson22/22.8.reuters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lesson22/22.9.QQ.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,24 +808,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="42" column="68" lean-forward="false" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lesson22/22.3.text_classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="94" column="62" lean-forward="false" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
-          <folding>
-            <element signature="e#42#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="320" column="0" lean-forward="false" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -879,6 +815,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="122" column="8" lean-forward="false" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lesson22/22.8.reuters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/gensim/models/word2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="588" column="0" lean-forward="false" selection-start-line="588" selection-start-column="0" selection-end-line="588" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="320" column="0" lean-forward="false" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/Crawler/crawler_practice_labels.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lesson22/22.7.netease_news.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="81" column="37" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="37" />
+          <folding>
+            <element signature="e#43#61#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -892,22 +867,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lesson22/22.1.Iris_GaussianNB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="21" column="21" lean-forward="false" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#42#60#0" expanded="true" />
+            <marker date="1521351160000" expanded="true" signature="2440:2517" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lesson22/22.3.text_classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1215">
+          <caret line="94" column="62" lean-forward="false" selection-start-line="94" selection-start-column="62" selection-end-line="94" selection-end-column="62" />
+          <folding>
+            <element signature="e#42#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lesson22/22.5.word2vec_sogou.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        <state relative-caret-position="285">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#19#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lesson22/22.7.netease_news.py">
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/typing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="35" column="18" lean-forward="true" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+        <state relative-caret-position="27">
+          <caret line="2330" column="8" lean-forward="false" selection-start-line="2330" selection-start-column="8" selection-end-line="2330" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/Crawler/crawler_label.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lesson22/jieba_fenci.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="40" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
           <folding>
-            <element signature="e#43#61#0" expanded="true" />
+            <element signature="e#17#30#0" expanded="true" />
           </folding>
         </state>
       </provider>

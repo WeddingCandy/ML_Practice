@@ -3,6 +3,7 @@
 from time import time
 from gensim.models import Word2Vec
 import os
+import codecs
 
 
 class LoadCorpora(object):
@@ -12,8 +13,10 @@ class LoadCorpora(object):
     def __iter__(self):#迭代器
         for file_name in os.listdir(self.path):
             path_name = os.path.join(self.path, file_name)
-            print(path_name)
-            f = open(path_name, 'r', encoding='utf-8')
+            # print(path_name)
+            f = open(path_name,'r' ,encoding='gb18030') #,encoding='gb18030','ignore'
+            # ff = open(corpora_path_2,'r' ,encoding='utf16')
+            # for ll in ff :print(ll)
             for line in f:
                 yield [word.strip() for word in line.split(' ')]
 
@@ -25,12 +28,16 @@ def print_list(a):
         print(s, end=' ')
 
 
+
+
+
 if __name__ == '__main__':
-    corpora_path = '/Volumes/d/data/200806'
+    corpora_path = '/Volumes/d/data/corpora_data'
+    corpora_path_2 = '/Volumes/d/data/200806/news.allsites.130806.txt'
     corpora_model_path = '/Users/Apple/PycharmProjects/learn_ml/lesson22/corpora_data'
     model_name = '/Users/Apple/PycharmProjects/learn_ml/lesson22/corpora_data/200806.model'
     if not os.path.exists(model_name):
-        sentences = LoadCorpora(corpora_model_path)
+        sentences = LoadCorpora(corpora_path)
         t_start = time()
         model = Word2Vec(sentences, size=200, min_count=5, workers=8)  # 词向量维度为200，丢弃出现次数少于5次的词
         model.save(model_name)
@@ -42,7 +49,7 @@ if __name__ == '__main__':
         print(word, end=' ')
         if i % 50 == 49:
             print()
-    print()
+    # print()
 
     intrested_words = ('中国', '手机', '学习', '人民', '名义')
     print('特征向量：')
