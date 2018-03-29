@@ -17,15 +17,21 @@ colums_aim = excel_sheet.ix[excel_sheet['数据源类别\n1为网站\n2为APP']<
 labels_ori = "http://" + colums_aim.iloc[:,1:]
 labels = labels_ori.values.tolist()
 count_failure = 0 ;count_success = 0
-for id in range(0,len(labels)):
+length = len(labels)
+# length = 50
+for id in range(0,length):
     try:
         req = requests.get(url=labels[id][0], headers=headers ,timeout=2)
-        html = req.text.encode(req.encoding).decode(req.encoding)
-        print('have read'+str(id+1))
+        if req == None:
+            continue
+        else:
+            html = req.text.encode(req.encoding).decode(req.encoding)
+        # print('have read'+str(id+1))
     except Exception  as e:
         print("Exception: {}".format(e))
-        print('第%d个label无法爬取' %(id+1))
-        count_failure +=1
+        count_failure += 1
+        # print('第%d个label无法爬取,失败次数%d' %(id+1,count_failure) )
+
         continue
     else:
         data =req.json
@@ -34,6 +40,7 @@ for id in range(0,len(labels)):
     # html0 =req.content.decode('gbk', 'ignore')
     bf = BeautifulSoup(html, "html.parser")
     meta_all = bf.find_all('head')
+    # meta_all = bf
     meta_tostring = str(meta_all)
     # string = '<meta content="保险，平安保险，车险，贷款，理财，信用卡，意外保险，重疾险，小额贷款，信用贷款，投资理财，个人理财，汽车保险，商业保险，少儿保险，健康保险，旅游保险，人寿保险, 医疗保险，平安普惠，平安信用卡，平安车险，平安银行" name="keywords">'
     meta_keyword = re.finditer(
@@ -41,12 +48,17 @@ for id in range(0,len(labels)):
         meta_tostring)
     keep = []
     for i in meta_keyword:
-        print(i.group() + '\n')
+        # print(i.group() + '\n')
         keep.append(i.group())
     keep = list(set(keep))
-    print('第%s个label已完成' %(id+1))
-    count_success +=1
-    excel_sheet_extract.ix[id:id,'label_contents'] = str(keep)
-print('成功数为：%d,成功率为：%d\%' %(count_success,count_success/(count_failure+count_success)*100))
-path = 'C:\\Users\\thinkpad\\Desktop\\result.csv'
-excel_sheet_extract.to_csv(path )
+    count_success += 1
+    print('第%s个label已完成，成功次数%d' %(id+1,count_success))
+
+    excel_sheet_extract.ix[id:id,'label_contents'] = str(keep).replace('[','').replace(']','')
+
+
+path = 'C:\\Users\\thinkpad\\Desktop\\result_all_contents.csv'
+excel_sheet_extract.to_csv(path,encoding='utf_8_sig' )
+success_rate = float(count_success/(count_success+count_failure)*100)
+print('成功数为：%d,成功率为：%f ' %(count_success,success_rate))
+
