@@ -3,12 +3,19 @@
 from time import time
 from gensim.models import Word2Vec
 import os
+import re
 import codecs
 
+
+def deal_special(s):
+    pattern = re.compile(r"[^\u4e00-\u9f5a]")
+    return pattern.sub('', s)
 
 class LoadCorpora(object):
     def __init__(self, dir_name):
         self.path = dir_name
+
+
 
     def __iter__(self):#迭代器
         for file_name in os.listdir(self.path):
@@ -18,6 +25,7 @@ class LoadCorpora(object):
             # ff = open(corpora_path_2,'r' ,encoding='utf16')
             # for ll in ff :print(ll)
             for line in f:
+                line= str(list(map(deal_special ,line)))
                 yield [word.strip() for word in line.split(' ')]
 
 
