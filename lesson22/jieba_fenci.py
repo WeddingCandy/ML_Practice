@@ -44,6 +44,7 @@ for fs in document_lists:
                 # keywords_cut2= psg.cut(line)
                 # results = results.join(keywords_cut)
                 results1 = " ".join(keywords_cut1)
+
                 # results2 = " ".join(keywords_cut1)
                 # print("------")
                 qq1 =map(deal_special,results1)

@@ -32,6 +32,7 @@ class LoadCorpora(object):
 def print_list(a):
     for i, s in enumerate(a):
         if i != 0:
+            
             print('+', end=' ')
         print(s, end=' ')
 
