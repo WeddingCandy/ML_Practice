@@ -6,8 +6,8 @@ import  re
 import csv
 
 
-corpora_path = '/Volumes/d/data/corpora_data_test/'
-output_path = '/Volumes/d/data/jieba_cut'
+corpora_path = '/Volumes/d/data/corpora_data/'
+output_path = '/Volumes/d/data/jieba_cut/'
 document_lists =  os.listdir(corpora_path)
 
 def deal_special(s):
@@ -37,25 +37,28 @@ for fs in document_lists:
             for i,line in enumerate(f):
                 r1 = '[a-zA-Z0-9’!"#$%&\'()*+,-./:;<=>?@，。?★、…【】《》？“”‘’！[\\]^_`{|}~]+'
                 line = re.sub(r1,'',line)
+                r2 = re.compile(r"[^\u4e00-\u9f5a]")
+                line = r2.sub(' ',line)
+                r3 = '\s{2,}'
+                line = re.sub(r3,' ',line)
                 if len(line)>1:
                     keywords_cut1 = jieba.cut(line)
+
                 else:
                     continue
                 # keywords_cut2= psg.cut(line)
                 # results = results.join(keywords_cut)
                 results1 = " ".join(keywords_cut1)
-
-                # results2 = " ".join(keywords_cut1)
-                # print("------")
-                qq1 =map(deal_special,results1)
-                # qq1 = results1
-                # print("--------")
-                x1 = str(list(qq1))
-                # x2 = str(list(qq2))
-                x1 = x1.replace(r"\n","").replace("'","").replace(",","").replace('\]',"").replace('\[',"").strip()
-                # x2 = x2.replace(r"\n", "").replace("'", "").replace(",", "").replace(']', "").replace('[', "").strip()
+                qq1 = results1
+                # pattern = re.compile(r"[^\u4e00-\u9f5a]")
+                # qq1 = pattern.sub(' ',results1)
+                # qq1 =map(deal_special,results1)                # print("--------\n"+str(type(qq1)))
+                x1 = list(qq1) # 不能随便list，可能会把内部的元素都截取出来单独成为一个元素
+                # print(qq1)
+                # print('33'+ i for i in x1)
+                # x1 = str(x1).replace(r"\n","").replace("'","").replace(",","").replace('\]',"").replace('\[',"").strip()
                 # print("第"+str(i)+"个"+str(x) )
-                txt_output.write(x1+'\n')
+                txt_output.write(qq1+'\n')
                 # txt_output2.write(x2 + '\n')
             txt_output.close()
             # txt_output2.close()

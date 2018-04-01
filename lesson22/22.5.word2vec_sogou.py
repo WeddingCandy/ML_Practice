@@ -8,31 +8,40 @@ import codecs
 
 
 def deal_special(s):
-    pattern = re.compile(r"[^\u4e00-\u9f5a]")
+    pattern = re.compile(r"[^\u4e00-\u9f5aa-zA-Z0-9]")
     return pattern.sub('', s)
 
 class LoadCorpora(object):
     def __init__(self, dir_name):
         self.path = dir_name
 
-
-
     def __iter__(self):#迭代器
+        count = 0
         for file_name in os.listdir(self.path):
-            path_name = os.path.join(self.path, file_name)
-            # print(path_name)
-            f = open(path_name,'r' ,encoding='gb18030') #,encoding='gb18030','ignore'
-            # ff = open(corpora_path_2,'r' ,encoding='utf16')
-            # for ll in ff :print(ll)
-            for line in f:
-                line= str(list(map(deal_special ,line)))
-                yield [word.strip() for word in line.split(' ')]
+            if file_name != '.DS_Store':
+                path_name = os.path.join(self.path, file_name)
+                count +=1
+                print(path_name + str(count))
+                f = open(path_name, 'r', encoding='gb18030')  # ,encoding='gb18030','ignore'
+                # ff = open(corpora_path_2,'r' ,encoding='utf16')
+                # for ll in ff :print(ll)
+                for line in f:
+                    line = str(list(map(deal_special, line)))
+                    try:
+                        yield [word.strip() for word in line.split(' ')]
+                    except Exception as e:
+                        print("Exception: {}".format(e))
+            else:
+                print('A wrong.')
 
+
+
+            #
 
 def print_list(a):
     for i, s in enumerate(a):
         if i != 0:
-            
+
             print('+', end=' ')
         print(s, end=' ')
 
@@ -41,21 +50,21 @@ def print_list(a):
 
 
 if __name__ == '__main__':
-    corpora_path = '/Volumes/d/data/corpora_data'
-    corpora_path_2 = '/Volumes/d/data/200806/news.allsites.130806.txt'
+    corpora_path = '/Volumes/d/data/corpora_data_test'
     corpora_model_path = '/Users/Apple/PycharmProjects/learn_ml/lesson22/corpora_data'
     model_name = '/Users/Apple/PycharmProjects/learn_ml/lesson22/corpora_data/200806.model'
     if not os.path.exists(model_name):
+        print('step 1 is runnning')
         sentences = LoadCorpora(corpora_path)
         t_start = time()
         model = Word2Vec(sentences, size=200, min_count=5, workers=8)  # 词向量维度为200，丢弃出现次数少于5次的词
+        print('step 1 is done.')
         model.save(model_name)
         print('OK:', time() - t_start)
-
     model = Word2Vec.load(model_name)
     print('model.wv.vocab = ', type(model.wv.vocab), len(model.wv.vocab))
     for i, word in enumerate(model.wv.vocab):
-        print(word, end=' ')
+        # print(word, end=' ')
         if i % 50 == 49:
             print()
     # print()
