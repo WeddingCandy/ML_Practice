@@ -10,7 +10,9 @@ from sklearn.naive_bayes import GaussianNB, MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.datasets import fetch_20newsgroups
 
 
 def iris_type(s):
@@ -19,22 +21,39 @@ def iris_type(s):
 
 
 if __name__ == "__main__":
-    data_type = 'cars'  # iris
+    data_type = 'news'  # iris,news,car
 
     if data_type == 'car':
         colmun_names = 'buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety', 'acceptability'#元祖的写法
         data = pd.read_csv('/Users/Apple/PycharmProjects/learn_ml/lesson22/car.data', header=None, names=colmun_names)
         for col in colmun_names:
-            data[col] = pd.Categorical(data[col]).codes #Categorical 能把说有的种类找出来；.codes能进行编码
-        x = data[list(colmun_names[:-1])]
+            data[col] = pd.Categorical(data[col]).codes #Categorical 能把所有的种类找出来；.codes能进行编码
+        x = data[list(colmun_names[:-1])] #取列时，实际上是左闭右开
         y = data[colmun_names[-1]]
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=0)
+        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
         model = MultinomialNB(alpha=1) #MultinomialNB的参数
         model.fit(x_train, y_train)
         y_train_pred = model.predict(x_train)
         print('CAR训练集准确率：', accuracy_score(y_train, y_train_pred)) #测试分类器的分类正确率
         y_test_pred = model.predict(x_test)
         print('CAR测试集准确率：', accuracy_score(y_test, y_test_pred))
+
+    if data_type == 'news':
+        news = fetch_20newsgroups(subset='all')
+        x_train, x_test, y_train, y_test = train_test_split(news.data,news.target,test_size= 0.25,random_state=33)
+        vec = CountVectorizer()
+        X_train = vec.fit_transform(x_train)
+        X_test = vec.transform(x_test)
+        model = MultinomialNB(alpha=1)
+        model.fit(X_train,y_train)
+        y_predict = model.predict(X_test)
+        print('news训练集准确率：', accuracy_score(y_train, y_predict)) #测试分类器的分类正确率
+        y_test_pred = model.predict(x_test)
+        print('news测试集准确率：', accuracy_score(y_test, y_test_pred))
+
+
+
+
     else:
         feature_names = '花萼长度', '花萼宽度', '花瓣长度', '花瓣宽度','类型'
         data = pd.read_csv('/Users/Apple/PycharmProjects/learn_ml/lesson9_regression/iris.data', header=None, names=feature_names)

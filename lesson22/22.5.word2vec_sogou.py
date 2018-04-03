@@ -2,6 +2,7 @@
 
 from time import time
 from gensim.models import Word2Vec
+import gensim.models.word2vec
 import os
 import re
 import codecs
@@ -20,17 +21,16 @@ class LoadCorpora(object):
         for file_name in os.listdir(self.path):
             if file_name != '.DS_Store':
                 path_name = os.path.join(self.path, file_name)
-                count +=1
-                print(path_name + str(count))
-                f = open(path_name, 'r', encoding='gb18030')  # ,encoding='gb18030','ignore'
+                print(path_name)
+                f = open(path_name, 'r', encoding='utf-8')  # ,encoding='gb18030','ignore'
                 # ff = open(corpora_path_2,'r' ,encoding='utf16')
                 # for ll in ff :print(ll)
                 for line in f:
-                    line = str(list(map(deal_special, line)))
-                    try:
+                    # line = re.sub("[^\u4e00-\u9f5aa-zA-Z0-9]",' ',line) #别随便消除空格呀！！！
+                    # try:
                         yield [word.strip() for word in line.split(' ')]
-                    except Exception as e:
-                        print("Exception: {}".format(e))
+                    # except Exception as e:
+                    #     print("Exception: {}".format(e))
             else:
                 print('A wrong.')
 
@@ -50,26 +50,28 @@ def print_list(a):
 
 
 if __name__ == '__main__':
-    corpora_path = '/Volumes/d/data/corpora_data_test'
+    corpora_path = '/Volumes/d/data/jieba_cut/'
+    # corpora_path = '/Volumes/d/data/jieba_cut_test/'
     corpora_model_path = '/Users/Apple/PycharmProjects/learn_ml/lesson22/corpora_data'
     model_name = '/Users/Apple/PycharmProjects/learn_ml/lesson22/corpora_data/200806.model'
     if not os.path.exists(model_name):
         print('step 1 is runnning')
         sentences = LoadCorpora(corpora_path)
+        print(sentences)
         t_start = time()
-        model = Word2Vec(sentences, size=200, min_count=5, workers=8)  # 词向量维度为200，丢弃出现次数少于5次的词
+        model = Word2Vec(sentences, size=200, min_count=1, workers=8)  # 词向量维度为200，丢弃出现次数少于5次的词
         print('step 1 is done.')
         model.save(model_name)
         print('OK:', time() - t_start)
     model = Word2Vec.load(model_name)
     print('model.wv.vocab = ', type(model.wv.vocab), len(model.wv.vocab))
     for i, word in enumerate(model.wv.vocab):
-        # print(word, end=' ')
+        # print(word,i, end=' ')
         if i % 50 == 49:
             print()
     # print()
 
-    intrested_words = ('中国', '手机', '学习', '人民', '名义')
+    intrested_words = ('中国','手机', '学习', '名义') #'中国',
     print('特征向量：')
     for word in intrested_words:
         print(word, len(model[word]), model[word])
@@ -79,7 +81,7 @@ if __name__ == '__main__':
         for w, s in result:
             print('\t', w, s)
 
-    words = ('中国', '祖国', '毛泽东', '人民')
+    words = ('中国', '祖国', '毛泽东')
     for i in range(len(words)):
         w1 = words[i]
         for j in range(i+1, len(words)):
