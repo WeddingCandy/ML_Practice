@@ -32,10 +32,9 @@ def stopwordslist(filepath):
     return stopwords
 
 def seg_sentence(sentence):
-    sentence_seged = sentence
     stopwords = stopwordslist('/Volumes/d/data/stopwords_for_jieba.txt')  # 这里加载停用词的路径
     outstr = ''
-    for word in sentence_seged:
+    for word in sentence:
         if word not in stopwords:
             if word != '\t':
                 outstr += word
