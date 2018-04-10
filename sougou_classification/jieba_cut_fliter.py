@@ -25,10 +25,10 @@ def input(trainname):
     return traindata
 start = time.clock()
 root_path = '/Volumes/d/data/sougoudata_ori/'
-filepath = root_path+'train_querylist.csv'
+filepath = root_path+'test_querylist.csv'
 QueryList = input(filepath)
 
-writepath =root_path+ 'writefile.csv'
+writepath =root_path+ 'testfile.csv'
 csvfile = open(writepath, 'w',encoding='gb18030')
 #parallel:speed up
 jieba.enable_parallel(processnum=4)

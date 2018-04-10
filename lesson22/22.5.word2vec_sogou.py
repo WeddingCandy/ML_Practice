@@ -57,6 +57,7 @@ if __name__ == '__main__':
     if not os.path.exists(model_name):
         print('step 1 is runnning')
         sentences = LoadCorpora(corpora_path)
+        
         print(sentences)
         t_start = time()
         model = Word2Vec(sentences, size=200, min_count=1, workers=8)  # 词向量维度为200，丢弃出现次数少于5次的词

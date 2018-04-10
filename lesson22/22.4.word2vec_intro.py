@@ -23,20 +23,21 @@ def print_list(a):
 
 
 if __name__ == '__main__':
-    if not os.path.exists('news.model'): #判断模型是否存在
-        sentences = LoadCorpora('news.dat')
+    if not os.path.exists('/Users/Apple/PycharmProjects/learn_ml/lesson22/news.model'): #判断模型是否存在
+        sentences = LoadCorpora('/Users/Apple/PycharmProjects/learn_ml/lesson22/news.dat')
+        print(type(sentences))
         t_start = time()
         model = Word2Vec(sentences, size=200, min_count=5, workers=8)  # 词向量维度为200，丢弃出现次数少于5次的词
         model.save('news.model')
         print('OK:', time() - t_start)
 
-    model = Word2Vec.load('news.model')
+    model = Word2Vec.load('/Users/Apple/PycharmProjects/learn_ml/lesson22/news.model')
     print(type(model))
     print('词典中词的个数：', len(model.wv.vocab))
-    for i, word in enumerate(model.wv.vocab): #enumerate
+    # for i, word in enumerate(model.wv.vocab): #enumerate
         # print(word, end=' ')
-        if i % 25 == 24:
-            print()
+        # if i % 25 == 24:
+        #     print()
     # print()
 
     intrested_words = ('中国', '手机', '学习', '人民', '名义')

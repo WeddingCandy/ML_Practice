@@ -277,7 +277,7 @@ def show_perplexity():
 
 if __name__ == '__main__':
     print('regularize_data')
-    regularize_data('./chat.txt')
+    regularize_data('QQChat.txt')
     print('segment')
     segment()
     print('combine')
