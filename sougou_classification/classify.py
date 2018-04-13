@@ -14,7 +14,7 @@ from sklearn.preprocessing import MinMaxScaler,StandardScaler,MaxAbsScaler
 class term(object):
     def __init__(self):
         random_rate = 8240
-        clf1 = SGDClassifier(alpha=5e-05,average=False,class_weight='balanced',loss='log',n_iter=30,penalty='l2', n_jobs=-1, random_state=random_rate)
+        clf1 = SGDClassifier(alpha=5e-05,average=False,class_weight='balanced',loss='log',max_iter=30,penalty='l2', n_jobs=-1, random_state=random_rate)
         clf2 = MultinomialNB(alpha=0.1)
         clf3 = LinearSVC(C=0.1, random_state=random_rate)
         clf4 = LogisticRegression(C=1.0,n_jobs=-1, max_iter=100, class_weight='balanced', random_state=random_rate)
@@ -22,7 +22,7 @@ class term(object):
 
         clf6 = VotingClassifier(estimators=[('sgd', clf1),('mb', clf2),('bb', clf3),('lf', clf4),('bnb', clf5)], voting='hard')
 
-        clf7 = SGDClassifier(alpha=5e-05,average=False,class_weight='balanced',loss='log',n_iter=30,penalty='l1', n_jobs=-1, random_state=random_rate)
+        clf7 = SGDClassifier(alpha=5e-05,average=False,class_weight='balanced',loss='log',max_iter=30,penalty='l1', n_jobs=-1, random_state=random_rate)
         clf8 = LinearSVC(C=0.9, random_state=random_rate)
         clf9 = LogisticRegression(C=0.5, n_jobs=-1, max_iter=100, class_weight='balanced', random_state=random_rate)
         clf10 = MultinomialNB(alpha=0.9)
@@ -82,18 +82,30 @@ class term(object):
         """
         print('fitting..')
         models = self.base_models
-        folds = list(KFold(len(Y), n_folds=5, random_state=0))
+        n_folds = 5
+        folder = KFold(n_splits=5, random_state=0)
         S_train = np.zeros((X.shape[0], len(models)))
         S_test = np.zeros((T.shape[0], len(models)))
 
         for i, bm in enumerate(models):
             clf = bm[1]
-
-            S_test_i = np.zeros((T.shape[0], len(folds)))
-            for j, (train_idx, test_idx) in enumerate(folds):
+            S_test_i = np.zeros((T.shape[0], n_folds))
+            for j, (train_idx, test_idx) in enumerate(list(folder.split(Y))):
                 X_train = X[train_idx]
                 y_train = Y[train_idx]
                 X_holdout = X[test_idx]
+        # folds = list(KFold(len(Y), n_folds=5, random_state=0))
+        # S_train = np.zeros((X.shape[0], len(models)))
+        # S_test = np.zeros((T.shape[0], len(models)))
+        #
+        # for i, bm in enumerate(models):
+        #     clf = bm[1]
+        #
+        #     S_test_i = np.zeros((T.shape[0], len(folds)))
+        #     for j, (train_idx, test_idx) in enumerate(folds):
+        #         X_train = X[train_idx]
+        #         y_train = Y[train_idx]
+        #         X_holdout = X[test_idx]
 
                 clf.fit(X_train, y_train)
                 y_pred = clf.predict(X_holdout)[:]
@@ -130,15 +142,25 @@ class term(object):
         print('向量化中...')
         X=np.array(X)
         fold_n=2
-        folds = list(StratifiedKFold(Y, n_folds=fold_n, shuffle=False,random_state=0))
+        folder = StratifiedKFold(n_splits=fold_n,shuffle=False,random_state=0)
         score = np.zeros(fold_n)
-        for j, (train_idx, test_idx) in enumerate(folds):
-            print(j+1,'-fold')
-
+        for j,(train_idx, test_idx) in enumerate(list(folder.split(X,Y))):
+            print(j + 1, '-fold')
             X_train = X[train_idx]
             y_train = Y[train_idx]
             X_test = X[test_idx]
             y_test = Y[test_idx]
+
+        # fold_n=2
+        # folds = list(StratifiedKFold(Y, n_folds=fold_n, shuffle=False,random_state=0))
+        # score = np.zeros(fold_n)
+        # for j, (train_idx, test_idx) in enumerate(folds):
+        #     print(j+1,'-fold')
+        #
+        #     X_train = X[train_idx]
+        #     y_train = Y[train_idx]
+        #     X_test = X[test_idx]
+        #     y_test = Y[test_idx]
 
             wv_X_train =wv_X[train_idx]
             wv_X_test = wv_X[test_idx]

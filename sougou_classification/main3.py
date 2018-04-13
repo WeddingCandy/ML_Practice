@@ -16,7 +16,7 @@ def input(trainname):
     :return:list
     """
     traindata = []
-    with open(trainname, 'rb') as f:
+    with open(trainname, 'r',encoding='gb18030') as f:
         reader = csv.reader(f)
         count = 0
         for line in reader:
@@ -38,7 +38,7 @@ def output(filename, ID, age, gender, education):
     :return:submit file
     """
     print(ID.shape, age.shape, gender.shape, education.shape)
-    with codecs.open(filename, 'w', encoding='gbk') as f:
+    with codecs.open(filename, 'w', encoding='gb18030') as f:
         count=0
         for i in range(len(ID)):
             # if count>=1000:
@@ -46,10 +46,12 @@ def output(filename, ID, age, gender, education):
             f.write(str(ID[i]) + ' ' + str(age[i]) + ' ' + str(gender[i]) + ' ' + str(education[i]) + '\n')
             count+=1
 if __name__ == '__main__':
+
     """
     the main function
     注意路径
     """
+    root_path = '/Volumes/d/data/sougoudata_ori/'
     start=time.time()
     # order='predict' #execute predict function
     order='test' #execute 2-fold validation function
@@ -57,16 +59,16 @@ if __name__ == '__main__':
     print('----------start----------')
 
     #loading
-    trainname = 'jieba_train_cut.csv'
-    testname = 'jieba_test_cut.csv'
+    trainname = root_path + 'trainfile_gb.csv'
+    testname =root_path +  'testfile_gb.csv'
     traindata = input(trainname)
     testdata = input(testname)
-    label_genderfile_path = 'train_gender.csv'
-    label_agefile_path = 'train_age.csv'
-    label_edufile_path = 'train_education.csv'
-    genderdata = np.loadtxt(open(label_genderfile_path, 'r')).astype(int)
-    agedata = np.loadtxt(open(label_agefile_path, 'r')).astype(int)
-    educationdata = np.loadtxt(open(label_edufile_path, 'r')).astype(int)
+    label_genderfile_path =root_path +  'train_gender.csv'
+    label_agefile_path =root_path +  'train_age.csv'
+    label_edufile_path =root_path +  'train_education.csv'
+    genderdata = np.loadtxt(open(label_genderfile_path, 'r',encoding='utf-8')).astype(int)
+    agedata = np.loadtxt(open(label_agefile_path, 'r',encoding='utf-8')).astype(int)
+    educationdata = np.loadtxt(open(label_edufile_path, 'r',encoding='utf-8')).astype(int)
 
     # ---------------------------------
     print('预处理中..')
