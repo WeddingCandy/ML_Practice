@@ -6,6 +6,10 @@ import random
 from gensim.utils import simple_preprocess
 from gensim.models.doc2vec import Doc2Vec
 
+"""
+https://github.com/RaRe-Technologies/gensim/blob/develop/docs/notebooks/doc2vec-lee.ipynb
+"""
+
 
 test_data_dir = '{}'.format(os.sep).join([gensim.__path__[0], 'test', 'test_data'])#os.path :the  seperation label in present os
 lee_train_file = test_data_dir + os.sep + 'lee_background.cor'
