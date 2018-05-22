@@ -6,7 +6,7 @@ import numpy as np
 import csv
 import codecs
 import multiprocessing
-import time
+import time , os , sys
 
 
 def input(trainname):
@@ -25,7 +25,7 @@ def input(trainname):
                 count += 1
             except:
                 print("error:", line, count)
-                traindata.append("1 ")
+                traindata.append("1")
     return traindata
 def output(filename, ID, age, gender, education):
     """
@@ -51,31 +51,33 @@ if __name__ == '__main__':
     the main function
     注意路径
     """
-    root_path = '/Volumes/d/data/sougoudata_ori/'
+    root_path = '/Users/Apple/datadata/sougoudata_ori'
     start=time.time()
     # order='predict' #execute predict function
-    order='test' #execute 2-fold validation function
-    print('orderis ', order)
+    order='stacking' #execute 2-fold validation function
+    print('order is ', order)
     print('----------start----------')
 
     #loading
-    trainname = root_path + 'trainfile_gb.csv'
-    testname =root_path +  'testfile_gb.csv'
+    trainname = root_path +os.sep+ 'trainfile_gb.csv'
+    testname =root_path +os.sep+ 'testfile_gb.csv'
     traindata = input(trainname)
     testdata = input(testname)
-    label_genderfile_path =root_path +  'train_gender.csv'
-    label_agefile_path =root_path +  'train_age.csv'
-    label_edufile_path =root_path +  'train_education.csv'
+    label_genderfile_path =root_path +os.sep+   'train_gender.csv'
+    label_agefile_path =root_path +os.sep+   'train_age.csv'
+    label_edufile_path =root_path + os.sep+  'train_education.csv'
     genderdata = np.loadtxt(open(label_genderfile_path, 'r',encoding='utf-8')).astype(int)
     agedata = np.loadtxt(open(label_agefile_path, 'r',encoding='utf-8')).astype(int)
     educationdata = np.loadtxt(open(label_edufile_path, 'r',encoding='utf-8')).astype(int)
-
+    print(genderdata[0:5],agedata[0:5],educationdata[0:5])
     # ---------------------------------
-    print('预处理中..')
+    print('预处理开始')
+    pre_time_start = time.time()
     preprocessob = preprocess.preprocess()
 
     #remove label missed samples
     gender_traindatas, genderlabel = preprocessob.removezero(traindata, genderdata)
+    print(gender_traindatas.shape,gender_traindatas.shape[0])
     age_traindatas, agelabel = preprocessob.removezero(traindata, agedata)
     edu_traindatas, edulabel = preprocessob.removezero(traindata, educationdata)
 
@@ -83,18 +85,22 @@ if __name__ == '__main__':
     w2vtrain = np.load('wv300_win100.train.npy')
     w2vtest = np.load('wv300_win100.test.npy')
 
-    wv_gender_traindatas, genderlabel = preprocessob.removezero(w2vtrain, genderdata)
-    wv_age_traindatas, agelabel = preprocessob.removezero(w2vtrain, agedata)
-    wv_edu_traindatas, edulabel = preprocessob.removezero(w2vtrain, educationdata)
-
+    wv_gender_traindatas, wv_genderlabel = preprocessob.removezero(w2vtrain, genderdata)
+    wv_age_traindatas, wv_agelabel = preprocessob.removezero(w2vtrain, agedata)
+    wv_edu_traindatas, wv_edulabel = preprocessob.removezero(w2vtrain, educationdata)
+    print('预处理结束')
+    pre_time_end = time.time()
+    print('total time is', pre_time_end - pre_time_start)
     if order=='test':
         termob1 = classify.term()
         termob2 = classify.term()
         termob3 = classify.term()
         p1 = multiprocessing.Process(target=termob1.validation,
                                      args=(gender_traindatas, genderlabel, wv_gender_traindatas, 'gender',))
-        p2=multiprocessing.Process(target=termob2.validation,args=(age_traindatas, agelabel, wv_age_traindatas, 'age',))
-        p3=multiprocessing.Process(target=termob3.validation,args=(edu_traindatas, edulabel, wv_edu_traindatas, 'edu',))
+        p2 = multiprocessing.Process(target=termob2.validation,
+                                   args=(age_traindatas, agelabel, wv_age_traindatas, 'age',))
+        p3 = multiprocessing.Process(target=termob3.validation,
+                                   args=(edu_traindatas, edulabel, wv_edu_traindatas, 'edu',))
 
         p1.start()
         p2.start()
@@ -108,8 +114,12 @@ if __name__ == '__main__':
         gender=termob.predict(gender_traindatas, genderlabel, testdata, wv_gender_traindatas, w2vtest, 'gender')
         age=termob.predict(age_traindatas, agelabel, testdata, wv_age_traindatas, w2vtest, 'age')
         edu=termob.predict(edu_traindatas, edulabel, testdata, wv_edu_traindatas, w2vtest, 'edu')
+        '''
+        /Users/Apple/datadata/sougoudata_ori/user_tag_query.10W.TRAIN.csv
+        '''
         ID = pd.read_csv('user_tag_query.10W.TEST.csv').ID
         output('submit.csv', ID, age, gender, edu)
+
 
     end=time.time()
     print('total time is', end-start)

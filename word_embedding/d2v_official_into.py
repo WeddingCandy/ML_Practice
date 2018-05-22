@@ -32,7 +32,9 @@ def read_corpus(fname, tokens_only=False):
             else:
                 # For training data, add tags
                 yield gensim.models.doc2vec.TaggedDocument(simple_preprocess(line), [i])
+
 train_corpus = list(read_corpus(lee_train_file))
+print(train_corpus)
 test_corpus = list(read_corpus(lee_test_file, tokens_only=True))
 
 model = Doc2Vec(size=50, min_count=2,workers=5)

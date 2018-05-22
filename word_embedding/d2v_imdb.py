@@ -29,24 +29,32 @@ def get_namelist(path):
 ##合成一个文档
 def merge_to_list(pathlist):
     contentslist =[]
+    count = 0
     for path in pathlist:
-        with open(path,'r',encoding='utf-8') as f :
-            content = (f.readlines()[0]).replace('<br />',' ').replace('\\', ' ').strip()
-            content = simple_preprocess(content)
-            contentslist.append(content)
+        try:
+            with open(path,'r',encoding='utf-8') as f :
+                count += 1
+                # print(content)
+                content = (f.readlines()[0]).replace('<br />',' ').replace('\\', ' ').strip()
+                content = simple_preprocess(content)
+                contentslist.append(content)
+
+        except Exception as e :
+            print(e)
+            continue
     return contentslist
+
 
 
 ##读取并预处理数据
 def get_dataset(pos_file,neg_file,unsup_file):
     LabeledSentence = d2v.LabeledSentence
     pos_reviews = merge_to_list(get_namelist(pos_file))
-    print(pos_reviews[0])
-    # neg_reviews = merge_to_list(get_namelist(neg_file))
-    # unsup_reviews = merge_to_list(get_namelist(unsup_file))
+    neg_reviews = merge_to_list(get_namelist(neg_file))
+    unsup_reviews = merge_to_list(get_namelist(unsup_file))
 
     #使用1表示正面情感，0为负面
-    x = np.concatenate((pos_reviews, pos_reviews))
+    x = np.concatenate((pos_reviews, neg_reviews))
     y = np.concatenate((np.ones(len(pos_reviews)), np.zeros(len(pos_reviews))))
     #将数据分割为训练与测试集
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
@@ -63,10 +71,10 @@ def get_dataset(pos_file,neg_file,unsup_file):
             corpus = [z[0].replace(c, ' %s '%c) for z in corpus]
         corpus = [z[0].split() for z in corpus]
         return corpus
-
-    x_train = cleanText(x_train)
-    x_test = cleanText(x_test)
-    unsup_reviews = cleanText(unsup_reviews)
+    #
+    # x_train = cleanText(x_train)
+    # x_test = cleanText(x_test)
+    # unsup_reviews = cleanText(unsup_reviews)
 
     #Gensim的Doc2Vec应用于训练要求每一篇文章/句子有一个唯一标识的label.
     #我们使用Gensim自带的LabeledSentence方法. 标识的格式为"TRAIN_i"和"TEST_i"，其中i为序号
@@ -96,14 +104,25 @@ def train(x_train,x_test,unsup_reviews,size ,epoch_num):
 
     #使用所有的数据建立词典
     # model_dm.build_vocab(np.concatenate((x_train, x_test, unsup_reviews)))
-    model_dbow.build_vocab(np.concatenate((x_train, x_test, unsup_reviews)))
+
+    xxx = []
+    xxx.extend(x_train)
+    xxx.extend(x_test)
+    xxx.extend(unsup_reviews)
+
+
+    # model_dbow.build_vocab(np.concatenate((x_train, x_test, unsup_reviews)))
+    model_dbow.build_vocab(xxx)
 
     #进行多次重复训练，每一次都需要对训练数据重新打乱，以提高精度
-    all_train_reviews = np.concatenate((x_train, unsup_reviews))
+    yyy =[]
+    yyy.extend(x_train)
+    yyy.extend(unsup_reviews)
+    all_train_reviews = yyy
     for epoch in range(epoch_num):
-        perm = np.random.permutation(all_train_reviews.shape[0])
+        perm = np.random.permutation(all_train_reviews)
         # model_dm.train(all_train_reviews[perm])
-        model_dbow.train(all_train_reviews[perm])
+        model_dbow.train(all_train_reviews)
 
     #训练测试数据集
     x_test = np.array(x_test)
@@ -143,9 +162,9 @@ def ROC_curve(lr,test_vecs,y_test):
 if __name__ == "__main__":
 
 
-    pos_file = '/Volumes/d/data/aclImdb/train/pos'
-    neg_file = '/Volumes/d/data/aclImdb/train/neg'
-    unsup_file = '/Volumes/d/data/aclImdb/train/unsup'
+    pos_file = '/Volumes/d/data/aclImdb/train_test/pos'
+    neg_file = '/Volumes/d/data/aclImdb/train_test/neg'
+    unsup_file = '/Volumes/d/data/aclImdb/train_test/unsup'
     #设置向量维度和训练次数
     size,epoch_num = 400,10
     #获取训练与测试数据及其类别标注

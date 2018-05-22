@@ -17,7 +17,7 @@ class term(object):
         clf1 = SGDClassifier(alpha=5e-05,average=False,class_weight='balanced',loss='log',max_iter=30,penalty='l2', n_jobs=-1, random_state=random_rate)
         clf2 = MultinomialNB(alpha=0.1)
         clf3 = LinearSVC(C=0.1, random_state=random_rate)
-        clf4 = LogisticRegression(C=1.0,n_jobs=-1, max_iter=100, class_weight='balanced', random_state=random_rate)
+        clf4 = LogisticRegression(C=1.0, n_jobs=-1, max_iter=100, class_weight='balanced', random_state=random_rate)
         clf5 = BernoulliNB(alpha=0.1)
 
         clf6 = VotingClassifier(estimators=[('sgd', clf1),('mb', clf2),('bb', clf3),('lf', clf4),('bnb', clf5)], voting='hard')
@@ -27,8 +27,8 @@ class term(object):
         clf9 = LogisticRegression(C=0.5, n_jobs=-1, max_iter=100, class_weight='balanced', random_state=random_rate)
         clf10 = MultinomialNB(alpha=0.9)
         clf11 = BernoulliNB(alpha=0.9)
-        clf12 = LogisticRegression(C=0.2, n_jobs=-1, max_iter=100, class_weight='balanced', random_state=random_rate,penalty='l1')
-        clf13 = LogisticRegression(C=0.8, n_jobs=-1, max_iter=100, class_weight='balanced', random_state=random_rate,penalty='l1')
+        clf12 = LogisticRegression(C=0.2, n_jobs=-1, max_iter=100, class_weight='balanced', random_state=random_rate, penalty='l1')
+        clf13 = LogisticRegression(C=0.8, n_jobs=-1, max_iter=100, class_weight='balanced', random_state=random_rate, penalty='l1')
         clf14 = RidgeClassifier(alpha=8)
         clf15 = PassiveAggressiveClassifier(C=0.01, loss='squared_hinge', n_iter=20, n_jobs=-1)
         clf16 = RidgeClassifier(alpha=2)
@@ -83,17 +83,18 @@ class term(object):
         print('fitting..')
         models = self.base_models
         n_folds = 5
-        folder = KFold(n_splits=5, random_state=0)
-        S_train = np.zeros((X.shape[0], len(models)))
+        folder = KFold(n_splits = n_folds, random_state=0)
+        S_train = np.zeros((X.shape[0], len(models)))  #shape[0]:extract shape num as shape is like (97845,) and shape[0] is like 97845 .
         S_test = np.zeros((T.shape[0], len(models)))
 
-        for i, bm in enumerate(models):
-            clf = bm[1]
+        for i, basemodel in enumerate(models):
+            clf = basemodel[1]
             S_test_i = np.zeros((T.shape[0], n_folds))
             for j, (train_idx, test_idx) in enumerate(list(folder.split(Y))):
                 X_train = X[train_idx]
                 y_train = Y[train_idx]
                 X_holdout = X[test_idx]
+                print(X_holdout.shape)
         # folds = list(KFold(len(Y), n_folds=5, random_state=0))
         # S_train = np.zeros((X.shape[0], len(models)))
         # S_test = np.zeros((T.shape[0], len(models)))
@@ -121,7 +122,7 @@ class term(object):
 
         print(S_train.shape,S_test.shape)
 
-        print('scalering..')
+        print('scalering...')
         min_max_scaler = StandardScaler()
         S_train = min_max_scaler.fit_transform(S_train)
         S_test = min_max_scaler.fit_transform(S_test)
