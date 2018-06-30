@@ -7,12 +7,12 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"]='2'
 
 input_node = 784
 out_node = 10
-layer1_node = 500
+layer1_node = 1000
 batch_size = 100
-learning_rate_base = 0.8
+learning_rate_base = 0.5
 learning_rate_decay = 0.99
 regularization_rate = 0.0001
-training_steps = 30000
+training_steps = 5000
 moving_average_decay = 0.99
 
 ## compute the result of FNN
@@ -35,11 +35,16 @@ def train(mnist):
     weighs2 = tf.Variable(tf.truncated_normal(shape=[layer1_node,out_node] ,stddev=0.1,name='weights2'))
     biases2 = tf.Variable(tf.constant(0.1,shape=[out_node]))
     y = inference(x,None,weighs1,biases1,weighs2,biases2)
+
+
+
     # identify train loopers and Exponential Moving Average concerned
     global_step = tf.Variable(0,trainable=False)
     variable_averages = tf.train.ExponentialMovingAverage(moving_average_decay,global_step)
     variable_averages_op = variable_averages.apply(tf.trainable_variables())
     average_y = inference(x,variable_averages,weighs1,biases1,weighs2,biases2)
+
+
     # compute cross entropy and its mean
     cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=y ,
                                                                    labels=tf.argmax(y_,1))
@@ -55,7 +60,7 @@ def train(mnist):
                                                mnist.train.num_examples / batch_size,
                                                learning_rate_decay,
                                                staircase=True)
-    train_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss,global_step=global_step)
+    train_step = tf.train.AdamOptimizer(learning_rate).minimize(loss,global_step=global_step)
     # BPNN updates paras and updates moving average of each para
     with tf.control_dependencies([train_step,variable_averages_op]):
         train_op = tf.no_op(name='train')
@@ -73,7 +78,9 @@ def train(mnist):
         for i in range(training_steps):
             if i % 1000 == 0:
                 validate_acc = sess.run(accuracy, feed_dict=validate_feed)
-                print("After %d training step(s), validation accuracy using average model is %g " % (i, validate_acc))
+                test_acc = sess.run(accuracy, feed_dict=test_feed)
+                print("After %d training step(s), validation accuracy using average model is %g "
+                      " ,test accuracy using average model is %g"% (i, validate_acc,test_acc))
 
             xs, ys = mnist.train.next_batch(batch_size)
             sess.run(train_op, feed_dict={x: xs, y_: ys})

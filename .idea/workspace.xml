@@ -1,138 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf43e6d8-ef26-4303-a490-4f78c66ab8e2" name="Default" comment="23rd April in Home Mac">
-      <change afterPath="$PROJECT_DIR$/tensorflow/tf_c5_mnist_test1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaoxiang/lesson24/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/learn_ml.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/learn_ml.iml" afterDir="false" />
+    <list default="true" id="cf43e6d8-ef26-4303-a490-4f78c66ab8e2" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/algorithm_prac/NLP_learning_1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm_prac/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/algorithm_prac/test1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_classification/MNIST_data/t10k-images-idx3-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_classification/MNIST_data/t10k-labels-idx1-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_classification/MNIST_data/train-images-idx3-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_classification/MNIST_data/train-labels-idx1-ubyte.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image_classification/csdn_c1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tensorflow/tf_c5_get_variable_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/Crawler_baidu_keyword.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/crawler_label.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/crawler_practice_labels.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/crawler_practice_vedio.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/crwaler_practice_pics.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/pandas_practice.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/label_auto/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/label_auto/word2vec_tets.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/4.0.sqrt.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/4.0.sqrt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/4.1.intro.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/4.1.intro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/4.2.class_intro.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/4.2.class_intro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/4.3.calc_e.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/4.3.calc_e.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/4.4.calc_sin.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/4.4.calc_sin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/4.5.pi.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/4.5.pi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/4.6.Ensumble.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/4.6.Ensumble.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/4.7.Benford.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/4.7.Benford.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/4.8.Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/4.8.Game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession4/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession4/test1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/6.1.Prime.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/6.1.Prime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/6.2.NagelSchreckenberg.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/6.2.NagelSchreckenberg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/6.3.pandas.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/6.3.pandas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/6.4.car_LR.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/6.4.car_LR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/6.5.Onehot.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/6.5.Onehot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/6.6.Features.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/6.6.Features.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/car.data" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/car.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/iris.data" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/iris.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/iris.names" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/iris.names" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/sales.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/sales.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lession6/sales_result.xls" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lession6/sales_result.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/11.1.Iris_DecisionTree.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/11.1.Iris_DecisionTree.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/11.2.Iris_DecisionTree_Enum.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/11.2.Iris_DecisionTree_Enum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/11.3.DecisionTreeRegressor.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/11.3.DecisionTreeRegressor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/11.4.MultiOutput_DTR.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/11.4.MultiOutput_DTR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/11.5.Iris_RandomForest_Enum.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/11.5.Iris_RandomForest_Enum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/11.6.Bagging.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/11.6.Bagging.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/11.7.Adult.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/11.7.Adult.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tensorflow/tf_c2_test1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/adult.data" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/adult.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/adult.test" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/adult.test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/graphviz-2.38.msi" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/graphviz-2.38.msi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/iris.data" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/iris.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson11_dtrf/iris.names" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/iris.names" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.1.Iris_GaussianNB.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/22.1.Iris_GaussianNB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.10.textrank.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/22.10.textrank.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.2.MarkovModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/22.2.MarkovModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.3.text_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/22.3.text_classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.4.word2vec_intro.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/22.4.word2vec_intro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.5.word2vec_sogou.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/22.5.word2vec_sogou.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.6.LDA_intro.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/22.6.LDA_intro.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.7.netease_news.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/22.7.netease_news.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.8.reuters.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/22.8.reuters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/22.9.QQ.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/22.9.QQ.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/LDA_test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/LDA_test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/QQChat.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/QQChat.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/car.data" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/car.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/car.names" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/car.names" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/car_columns.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/car_columns.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/corpora_data/20news-bydate_py3.pkz" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/corpora_data/20news-bydate_py3.pkz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/corpora_data/jieba_fenci_posseg.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/corpora_data/jieba_fenci_posseg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/jieba_fenci.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/jieba_fenci.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/news.dat" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/news.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/novel.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson24/novel.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/reuters.dat" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/reuters.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/reuters.ldac" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/reuters.ldac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/reuters.titles" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/reuters.titles" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/reuters.tokens" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/reuters.tokens" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson22/stopword.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/stopword.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson24/Current.xls" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson24/Current.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson24/Englishword.train" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson24/Englishword.train" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson24/MyBook.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson24/MyBook.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson24/SH600000.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson24/SH600000.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson24/SZ000725.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson24/SZ000725.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson24/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson11_dtrf/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson24/new_current.xls" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson24/new_current.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson24/novel.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/novel.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson24/pku_training.utf8" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson24/pku_training.utf8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.1.ImageToChar.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.1.ImageToChar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.10.stock_K.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.10.stock_K.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.11.image_convolve.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.11.image_convolve.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.12.odeint.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.12.odeint.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.13.Mandelbrot.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.13.Mandelbrot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.2.hashlib.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.2.hashlib.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.3.stat.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.3.stat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.4.MultiGuass.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.4.MultiGuass.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.5.gamma.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.5.gamma.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.6.Pearson.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.6.Pearson.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.7.FFT.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.7.FFT.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.8.SVD.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.8.SVD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/5.9.stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/5.9.stock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/SH600000.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/SH600000.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/lena.png" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/lena.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/son.png" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/son.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson5/text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson5/text.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/9.0.GDA.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/9.0.GDA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/9.1.Advertising.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/9.1.Advertising.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/9.2.LinearRegression_CV.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/9.2.LinearRegression_CV.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/9.3.ElasticNet.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/9.3.ElasticNet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/9.4.Iris_LR.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/9.4.Iris_LR.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/9.5.Boston.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/9.5.Boston.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/9.6.ARIMA.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/9.6.ARIMA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/9.7.save.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/9.7.save.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/Advertising.csv" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/Advertising.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/AirPassengers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/AirPassengers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson22/corpora_data/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/housing.data" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/housing.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/housing.names" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/housing.names" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/iris.data" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/iris.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson9_regression/iris.names" beforeDir="false" afterPath="$PROJECT_DIR$/xiaoxiang/lesson9_regression/iris.names" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sougou_classification/classify.py" beforeDir="false" afterPath="$PROJECT_DIR$/sougou_classification/classify.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sougou_classification/main3.py" beforeDir="false" afterPath="$PROJECT_DIR$/sougou_classification/main3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sougou_classification/preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/sougou_classification/preprocess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/tf_test1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/tf_test2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/tf_test3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/tf_test4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/tf_test_learning_rate.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tensorflow/tf_test_loss_function.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/word_embedding/d2v_imdb.py" beforeDir="false" afterPath="$PROJECT_DIR$/word_embedding/d2v_imdb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/word_embedding/d2v_official_into.py" beforeDir="false" afterPath="$PROJECT_DIR$/word_embedding/d2v_official_into.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tensorflow/tf_c5_mnist_test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/tensorflow/tf_c5_mnist_test1.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -146,44 +27,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main3.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sougou_classification/main3.py">
+      <file leaf-file-name="STFIWF.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sougou_classification/STFIWF.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="test1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/algorithm_prac/test1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="39" column="61" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="61" />
+            <state relative-caret-position="300">
+              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NLP_learning_1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/algorithm_prac/NLP_learning_1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
               <folding>
-                <element signature="e#15#30#0" expanded="true" />
+                <element signature="e#476#489#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preprocess.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sougou_classification/preprocess.py">
+      <file leaf-file-name="csdn_c1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image_classification/csdn_c1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="classify.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sougou_classification/classify.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="86" column="137" lean-forward="true" selection-start-line="86" selection-start-column="137" selection-end-line="86" selection-end-column="137" />
+            <state relative-caret-position="1095">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
               <folding>
-                <element signature="e#15#37#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/utils/validation.py">
+      <file leaf-file-name="tf_c5_mnist_test1.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tensorflow/tf_c5_mnist_test1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="401" selection-start-line="401" selection-end-line="401" />
+            <state relative-caret-position="524">
+              <caret line="95" column="24" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+              <folding>
+                <element signature="e#20#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tf_c5_get_variable_test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tensorflow/tf_c5_get_variable_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -200,10 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>C_</find>
-      <find>loc</find>
-      <find>168080</find>
-      <find>1680806</find>
       <find>中国</find>
       <find>bincount</find>
       <find>xrange</find>
@@ -230,6 +124,10 @@
       <find>root_path</find>
       <find>class_weight</find>
       <find>向量化中</find>
+      <find>output_path</find>
+      <find>print</find>
+      <find>linear_model</find>
+      <find>n_jobs</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/lesson5</dir>
@@ -251,19 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lesson9_regression/9.5.Boston.py" />
-        <option value="$PROJECT_DIR$/lesson9_regression/9.2.LinearRegression_CV.py" />
-        <option value="$PROJECT_DIR$/lesson9_regression/9.3.ElasticNet.py" />
-        <option value="$PROJECT_DIR$/lession6/6.6.Features.py" />
-        <option value="$PROJECT_DIR$/lesson9_regression/9.1.Advertising.py" />
-        <option value="$PROJECT_DIR$/../Huaat2018/Regression_for_isobar/regression.py" />
-        <option value="$PROJECT_DIR$/lesson22/22.2.MarkovModel.py" />
-        <option value="$PROJECT_DIR$/lesson22/22.3.text_classification.py" />
-        <option value="$PROJECT_DIR$/../Huaat2018/Crawler/Crawler_baidu_keyword.py" />
-        <option value="$PROJECT_DIR$/../Huaat2018/Crawler/crwaler_practice_pics.py" />
-        <option value="$PROJECT_DIR$/lesson22/22.6.LDA_intro.py" />
-        <option value="$PROJECT_DIR$/lesson22/22.7.netease_news.py" />
-        <option value="$PROJECT_DIR$/lesson22/22.1.Iris_GaussianNB.py" />
         <option value="$PROJECT_DIR$/lesson22/corpora_data/jieba_fenci_posseg.py" />
         <option value="$PROJECT_DIR$/lesson22/jieba_fenci.py" />
         <option value="$PROJECT_DIR$/sougou_classification/tocsv.py" />
@@ -300,8 +185,21 @@
         <option value="$PROJECT_DIR$/xiaoxiang/lesson22/22.6.LDA_intro.py" />
         <option value="$PROJECT_DIR$/tensorflow/tf_c2_test1.py" />
         <option value="$PROJECT_DIR$/sougou_classification/preprocess.py" />
-        <option value="$PROJECT_DIR$/sougou_classification/classify.py" />
         <option value="$PROJECT_DIR$/sougou_classification/main3.py" />
+        <option value="$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.3.1.py" />
+        <option value="$PROJECT_DIR$/../Huaat2018/pingan_face_capture/pingan_human_fance_capture_result_transform.py" />
+        <option value="$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/chans_independent_file_to_csv.py" />
+        <option value="$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/main2.py" />
+        <option value="$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/class_w2v.py" />
+        <option value="$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/main3.py" />
+        <option value="$PROJECT_DIR$/sougou_classification/classify.py" />
+        <option value="$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/classify.py" />
+        <option value="$PROJECT_DIR$/../Huaat2018/pingan_face_capture/pingan_human_fance_capture_result_transform_v2.py" />
+        <option value="$PROJECT_DIR$/algorithm_prac/test1.py" />
+        <option value="$PROJECT_DIR$/algorithm_prac/NLP_learning_1.py" />
+        <option value="$PROJECT_DIR$/image_classification/csdn_c1.py" />
+        <option value="$PROJECT_DIR$/tensorflow/tf_c5_mnist_test1.py" />
+        <option value="$PROJECT_DIR$/tensorflow/tf_c5_get_variable_test.py" />
       </list>
     </option>
   </component>
@@ -337,7 +235,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -345,10 +242,21 @@
               <item name="learn_ml" type="b2602c69:ProjectViewProjectNode" />
               <item name="learn_ml" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="learn_ml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="learn_ml" type="462c0819:PsiDirectoryNode" />
+              <item name="image_classification" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="learn_ml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="learn_ml" type="462c0819:PsiDirectoryNode" />
+              <item name="tensorflow" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -370,6 +278,10 @@
       <recent name="$PROJECT_DIR$/lesson11_dtrf" />
       <recent name="$PROJECT_DIR$/lesson9_regression" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/image_classification/MNIST_data" />
+      <recent name="$PROJECT_DIR$/../Huaat2018" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -383,8 +295,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.main3">
-    <configuration name="classify" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.tf_c5_get_variable_test">
+    <configuration name="NLP_learning_1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn_ml" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -392,17 +304,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sougou_classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm_prac" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sougou_classification/classify.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm_prac/NLP_learning_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="d2v_official_into" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="csdn_c1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn_ml" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -410,35 +322,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/word_embedding" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/image_classification" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/word_embedding/d2v_official_into.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/image_classification/csdn_c1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="dataset_train_leve1_doc2vec_v2.2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Huaat2018" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Huaat2018/label_auto" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="main3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn_ml" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -446,17 +340,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sougou_classification" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/algorithm_prac" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sougou_classification/main3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorithm_prac/test1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="tf_c2_test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tf_c5_get_variable_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="learn_ml" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -468,26 +362,44 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow/tf_c2_test1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow/tf_c5_get_variable_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="tf_c5_mnist_test1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="learn_ml" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tensorflow" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow/tf_c5_mnist_test1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.d2v_official_into" />
-      <item itemvalue="Python.dataset_train_leve1_doc2vec_v2.2" />
-      <item itemvalue="Python.tf_c2_test1" />
-      <item itemvalue="Python.main3" />
-      <item itemvalue="Python.classify" />
+      <item itemvalue="Python.test1" />
+      <item itemvalue="Python.NLP_learning_1" />
+      <item itemvalue="Python.csdn_c1" />
+      <item itemvalue="Python.tf_c5_mnist_test1" />
+      <item itemvalue="Python.tf_c5_get_variable_test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main3" />
-        <item itemvalue="Python.classify" />
-        <item itemvalue="Python.tf_c2_test1" />
-        <item itemvalue="Python.d2v_official_into" />
-        <item itemvalue="Python.dataset_train_leve1_doc2vec_v2.2" />
+        <item itemvalue="Python.tf_c5_get_variable_test" />
+        <item itemvalue="Python.tf_c5_mnist_test1" />
+        <item itemvalue="Python.csdn_c1" />
+        <item itemvalue="Python.NLP_learning_1" />
+        <item itemvalue="Python.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -677,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524494472558</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="22nd May in Office Mac">
+      <created>1526970652591</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1526970652591</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -690,13 +609,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2406672" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19062749" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.32890856" />
-      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5059571" side_tool="true" weight="0.27728614" />
-      <window_info active="true" anchor="bottom" x="-28" y="312" width="1259" height="352" id="Run" order="9" sideWeight="0.4940429" visible="true" weight="0.46597633" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5059571" side_tool="true" weight="0.2766272" />
+      <window_info active="true" anchor="bottom" x="-28" y="312" width="1259" height="352" id="Run" order="9" sideWeight="0.4940429" visible="true" weight="0.25739646" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32857144" />
       <window_info x="295" y="164" width="690" height="490" id="Python Console" order="3" weight="0.33439237" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.2494043" />
@@ -711,6 +630,25 @@
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32890856" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2406672" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.2494043" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.32890856" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32857144" />
+      <window_info anchor="bottom" x="-28" y="312" width="1259" height="352" id="Run" order="9" sideWeight="0.4940429" weight="0.34911242" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.39940828" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32692307" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5059571" side_tool="true" weight="0.2766272" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.32962668" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32890856" />
+      <window_info x="295" y="164" width="690" height="490" id="Python Console" order="3" weight="0.33439237" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -734,7 +672,8 @@
     <MESSAGE value="13th April in Office Mac" />
     <MESSAGE value="18th April in Office Mac" />
     <MESSAGE value="23rd April in Home Mac" />
-    <option name="LAST_COMMIT_MESSAGE" value="23rd April in Home Mac" />
+    <MESSAGE value="22nd May in Office Mac" />
+    <option name="LAST_COMMIT_MESSAGE" value="22nd May in Office Mac" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -755,106 +694,10 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="22" />
+      <option name="time" value="23" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/tensorflow/python/client/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="576" selection-start-line="576" selection-end-line="576" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow/tf_test2.py" />
-    <entry file="file://$PROJECT_DIR$/tensorflow/tf_test1.py" />
-    <entry file="file://$PROJECT_DIR$/sougou_classification/class_w2v.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="34" selection-start-line="34" selection-end-line="42" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/tensorflow/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/tensorflow/python/ops/random_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="137" column="20" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/tensorflow/python/ops/array_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="1481" column="4" selection-start-line="1481" selection-start-column="4" selection-end-line="1481" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/gensim/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="211" column="4" selection-start-line="211" selection-start-column="4" selection-end-line="211" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_level1_doc2vec.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/2and3/datetime.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3300">
-          <caret line="225" column="8" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/Crawler/crawler_label.py" />
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/labels_pre_treatment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_level1_w2v.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/gensim/models/word2vec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="831" selection-start-line="831" selection-end-line="831" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/labels_pre_classify_to_independent_doc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/Crawler/labels_crawler_supplement/labels_crawler_supplemt_1.py" />
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_level1_doc2vec_v1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3720">
-          <caret line="248" column="95" selection-start-line="248" selection-start-column="95" selection-end-line="248" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/metrics/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="3" selection-start-column="3" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/naive_bayes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -895,20 +738,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="173" column="18" selection-start-line="173" selection-start-column="18" selection-end-line="173" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sougou_classification/jieba_cut_fliter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.py" />
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/model_selection/_split.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
@@ -916,27 +746,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="162" column="29" selection-start-line="162" selection-start-column="29" selection-end-line="162" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="196" column="29" selection-start-line="196" selection-start-column="29" selection-end-line="196" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.3.py" />
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.2.py" />
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.1.py" />
     <entry file="file://$PROJECT_DIR$/tensorflow/tf_test4.py" />
     <entry file="file://$PROJECT_DIR$/word_embedding/d2v_imdb.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -987,18 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow/tf_c5_mnist_test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1061">
-          <caret selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sougou_classification/STFIWF.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -1016,13 +816,6 @@
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/csv.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/sougou_classification/main2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/linear_model/stochastic_gradient.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -1030,34 +823,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/linear_model/logistic.py">
+    <entry file="file://$PROJECT_DIR$/sougou_classification/jieba_cut_fliter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="1156" column="58" selection-start-line="1156" selection-start-column="58" selection-end-line="1156" selection-end-column="58" />
+        <state relative-caret-position="60">
+          <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/numpy/lib/npyio.py">
+    <entry file="file://$PROJECT_DIR$/sougou_classification/main2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="764" column="4" selection-start-line="764" selection-start-column="4" selection-end-line="764" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/utils/validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="401" selection-start-line="401" selection-end-line="401" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sougou_classification/classify.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="86" column="137" lean-forward="true" selection-start-line="86" selection-start-column="137" selection-end-line="86" selection-end-column="137" />
-          <folding>
-            <element signature="e#15#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="167">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1068,12 +844,110 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/utils/validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="401" selection-start-line="401" selection-end-line="401" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/jieba_cut_fliter.py" />
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/tocsv.py" />
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/labels_pre_classify_to_independent_doc.py" />
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/csvtolable.py" />
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/xlrd/book.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="1270" selection-start-line="1270" selection-end-line="1270" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/label_auto/dataset_train_leve1_doc2vec_v2.3.1.py" />
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/pingan_face_capture/pingan_human_fance_capture_result_transform.py" />
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/chans_independent_file_to_csv.py" />
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/numpy/lib/npyio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="764" column="4" selection-start-line="764" selection-start-column="4" selection-end-line="764" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/class_w2v.py" />
     <entry file="file://$PROJECT_DIR$/sougou_classification/main3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="39" column="61" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="61" />
+        <state relative-caret-position="594">
+          <caret line="113" column="101" selection-start-line="113" selection-start-column="94" selection-end-line="113" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/main2.py" />
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/sklearn/linear_model/logistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="1227" selection-start-line="1227" selection-end-line="1227" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sougou_classification/classify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="40" column="82" selection-start-line="40" selection-start-column="76" selection-end-line="40" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/main3.py" />
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/labels_auto_classification_stacking/classify.py" />
+    <entry file="file://$PROJECT_DIR$/sougou_classification/STFIWF.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Huaat2018/pingan_face_capture/pingan_human_fance_capture_result_transform_v2.py" />
+    <entry file="file://$PROJECT_DIR$/algorithm_prac/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algorithm_prac/NLP_learning_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
           <folding>
-            <element signature="e#15#30#0" expanded="true" />
+            <element signature="e#476#489#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image_classification/csdn_c1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.6/site-packages/tensorflow/python/training/learning_rate_decay.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="48" column="41" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="89" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow/tf_c5_get_variable_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow/tf_c5_mnist_test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="95" column="24" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+          <folding>
+            <element signature="e#20#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
