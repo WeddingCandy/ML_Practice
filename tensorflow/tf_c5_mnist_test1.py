@@ -24,10 +24,24 @@ def inference(input_tensor, avg_class, weights1, biases1, weights2, biases2):
         layer1 = tf.nn.relu(tf.matmul(input_tensor,avg_class.average(weights1)) + avg_class.average(biases1))
         return  tf.matmul(layer1,avg_class.average(weights2) )+ avg_class.average(biases2)
 
+def inference2(input_tensor,reuse=False):
+    with tf.variable_scope('layer1' ,reuse= reuse) :
+        weights = tf.get_variable("weights",[input_node,layer1_node],initializer=tf.truncated_normal_initializer(stddev=0.1))
+        biases = tf.get_variable("biases" , [layer1_node] , initializer= tf.constant_initializer(0.0))
+        layer1 = tf.nn.relu(tf.matmul(input_tensor,weights) + biases)
+    with tf.variable_scope('layer2' ,reuse= reuse) :
+        weights = tf.get_variable("weights",[input_node,layer1_node],initializer=tf.truncated_normal_initializer(stddev=0.1))
+        biases = tf.get_variable("biases" , [layer1_node] , initializer= tf.constant_initializer(0.0))
+        layer2 = tf.nn.relu(tf.matmul(layer1,weights) + biases)
+        return  layer2
+
+
+
+
 ## model trainning process
 def train(mnist):
-    x = tf.placeholder(shape=(None,input_node), dtype=tf.float32 , name='x-input')
-    y_ = tf.placeholder(shape=(None,out_node) , dtype=tf.float32 , name='y-input')
+    x = tf.placeholder(dtype=tf.float32, shape=[None, input_node], name='x-input')
+    y_ = inference2(x)
     # generate hidden layer paras
     weighs1 = tf.Variable(tf.truncated_normal(shape=[input_node,layer1_node] ,stddev=0.1,name='weights1'))
     biases1 = tf.Variable(tf.constant(0.1,shape=[layer1_node]))
